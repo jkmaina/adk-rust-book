@@ -1,0 +1,31 @@
+# Rust
+/target
+**/target
+
+# Ignore build artifacts
+/debug/
+/Release/
+
+# Editor directories
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Backup files
+*~
+*.rs.bk
+*.rs.orig
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env
