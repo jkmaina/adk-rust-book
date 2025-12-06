@@ -1,16 +1,18 @@
 # Rust Type System Example
 
-Explore Rust's **static type system** and how it infers types.
+**What:** Learn about Rust's different data types and how it figures out what type you mean.
+
+**Why:** Every piece of data has a type. Understanding types helps you write correct code.
 
 ## What This Example Shows
 
-- **Integer types**: `i32` (default), `u32`, `i64`, `u8`, etc.
-- **Floating-point**: `f64` (default), `f32`
-- **Booleans & characters**: `bool`, `char` (Unicode)
-- **Tuples**: Fixed-size, mixed types (`(i32, f64, u8)`)
-- **Arrays**: Fixed-size, same type (`[1, 2, 3, 4, 5]`)
+- **Integers**: Whole numbers (`i32`, `u32`, `i64`, `u8`)
+- **Floats**: Decimals (`f64`, `f32`)
+- **Booleans**: `true` or `false`
+- **Characters**: Single Unicode characters like `'A'` or `'🦀'`
+- **Tuples**: Mix different types together like `(42, 3.14, true)`
+- **Arrays**: Lists of the same type like `[1, 2, 3, 4, 5]`
 - **Type inference**: Rust figures out types automatically
-- **Type casting**: Using `as` for explicit conversions
 
 ## Run It
 
@@ -18,9 +20,42 @@ Explore Rust's **static type system** and how it infers types.
 cargo run
 ```
 
-## Key Concepts
+## Why This Matters
 
-- Rust is **statically typed**—types are checked at compile time
-- Type inference means you often don't need to annotate types
-- Tuples let you group different types; arrays group the same type
-- Default types: `i32` for integers, `f64` for floats
+**"Static typing"** means Rust checks all types at compile time (before running).
+
+Benefits:
+- **Catches bugs early**: Wrong type = compiler error
+- **No surprises**: You know what type everything is
+- **Performance**: Types are known ahead of time
+
+## Beginner's Explanation
+
+**Types are like containers:**
+
+- **i32**: Container for whole numbers (-2 billion to +2 billion)
+- **f64**: Container for decimals (3.14, 2.71828, etc.)
+- **bool**: Container for true/false
+- **String**: Container for text
+- **char**: Container for a single character
+
+**Tuples**: Mix containers together
+```
+(42, 3.14, true)
+ ↓   ↓      ↓
+i32  f64   bool
+```
+
+**Arrays**: Same container repeated
+```
+[1, 2, 3, 4, 5]
+ ↓  ↓  ↓  ↓  ↓
+i32 i32 i32 i32 i32
+```
+
+**Type inference**: Rust is smart
+```
+let x = 42;          // Rust: "That's an i32"
+let pi = 3.14;       // Rust: "That's an f64"
+let greeting = "hi"; // Rust: "That's a &str"
+```

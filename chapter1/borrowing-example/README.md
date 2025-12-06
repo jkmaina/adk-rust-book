@@ -1,13 +1,15 @@
 # Borrowing Example
 
-Understand Rust's **borrowing** system—how to share data without transferring ownership.
+**What:** Learn how to share data temporarily without giving it away.
+
+**Why:** Rust makes sure your data is safe. This example shows how to "lend" data to functions without losing it.
 
 ## What This Example Shows
 
-- **Creating a String** with `String::from()`
-- **Passing references**: Using `&s1` instead of moving `s1`
-- **Function parameters with references**: `fn calculate_length(s: &String) -> usize`
-- **Original ownership preserved**: `s1` is still valid after the function call
+- **Creating a String**: Making text data
+- **References** (`&`): Lending data to a function instead of handing it over
+- **Calling functions with references**: Passing data safely
+- **Keeping your data**: The original string stays valid after the function uses it
 
 ## Run It
 
@@ -15,9 +17,24 @@ Understand Rust's **borrowing** system—how to share data without transferring 
 cargo run
 ```
 
-## Key Concepts
+Output:
+```
+The length of 'hello' is 5.
+```
 
-- `&s1` creates a **reference** (borrow) without taking ownership
-- References are immutable by default
-- The function only borrows—it can't modify the data (unless `&mut`)
-- No ownership transfer = original variable stays valid
+## Why This Matters
+
+In many languages, when you pass data to a function, you might lose it. Rust's **borrowing** system lets you:
+- **Lend** your data to a function (using `&`)
+- **Keep ownership** after the function returns
+- **Stay safe** because Rust prevents data accidents
+
+## Beginner's Explanation
+
+Think of borrowing like lending a book:
+- **`let s1 = String::from("hello")`**: You own the book
+- **`&s1`**: You lend the book to someone (but you still own it)
+- **Function uses it**: Someone reads your book
+- **After function**: Book comes back to you, you still own it
+
+No copying required, and you don't lose anything!

@@ -1,13 +1,15 @@
 # Agent Trait Example
 
-Learn how to define **async traits** for flexible agent interfaces.
+**What:** Learn how to create flexible "agent" types that can handle messages.
+
+**Why:** Real programs need pluggable, swappable components. Traits let you define a contract that many types can implement.
 
 ## What This Example Shows
 
-- **Async traits**: Using `#[async_trait]` to write traits with `async fn` methods
-- **Trait implementation**: Implementing an `Agent` trait for `CustomerServiceAgent`
-- **Multiple methods**: Both async (`handle`) and sync (`name`)
-- **Calling async methods**: Using `.await` on trait methods
+- **Traits**: Define what methods a type must have (like a contract)
+- **Async methods**: Methods that pause and resume (using `async`)
+- **Implementing traits**: Making a `CustomerServiceAgent` that follows the trait contract
+- **Calling trait methods**: Using the agent to handle requests
 
 ## Run It
 
@@ -15,9 +17,34 @@ Learn how to define **async traits** for flexible agent interfaces.
 cargo run
 ```
 
-## Key Concepts
+Output:
+```
+Agent Alice responded: Processing: I need help with my order
+```
 
-- The `async-trait` crate enables `async fn` inside trait definitions
-- Traits define contracts—types implement them
-- `#[async_trait]` macro transforms async trait methods into Futures
-- Useful for building extensible agent systems with pluggable behavior
+## Why This Matters
+
+**Traits** let you write flexible code:
+- Define "what an Agent must do" in one place
+- Let multiple types implement it (different agents)
+- Swap agents without rewriting code
+
+## Beginner's Explanation
+
+**Trait** = A contract or interface:
+```
+An Agent must:
+1. Have a name() method
+2. Have an async handle() method for processing requests
+```
+
+**Implementation** = Making a type follow the contract:
+```
+CustomerServiceAgent:
+✓ Has name() → returns "Alice"
+✓ Has async handle() → processes customer requests
+```
+
+**Using it**: You can call methods on any Agent, knowing they have these methods!
+
+This is how you build extensible systems where different agents can plug in easily.
