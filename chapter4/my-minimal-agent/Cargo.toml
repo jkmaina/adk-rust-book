@@ -1,0 +1,12 @@
+[package]
+name = "my-minimal-agent"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+adk-rust = "0.1"
+tokio = { version = "1.40", features = ["full"] }
+dotenv = "0.15"
+serde_json = "1.0"
+async-trait = "0.1.89"
+adk-core = "0.1.1"
