@@ -39,11 +39,10 @@ Agents with tools and capabilities:
 - [my-minimal-agent](chapter4/my-minimal-agent) - Four agent examples (minimal, interactive, search, calculator)
 - [structured_output](chapter4/structured_output) - Working with structured responses
 
-### Chapter 5: Coming Soon
-More advanced topics...
+### Chapter 5: Advanced Topics
+Advanced agent patterns:
 
-### Additional Projects
-- [multilingual-agent](multilingual-agent) - Multi-language support example
+- [multilingual-agent](chapter5/multilingual-agent) - Multi-language support with session state
 
 ## Prerequisites
 
