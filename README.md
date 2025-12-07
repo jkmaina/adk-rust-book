@@ -47,6 +47,7 @@ Advanced agent patterns:
 - [text-summarizer](chapter5/text-summarizer) - Summarize text and save to session state
 - [agent-setup-example](chapter5/agent-setup-example) - Configure multi-agent pipeline (setup only)
 - [content-pipeline](chapter5/content-pipeline) - Multi-agent sequential pipeline (research → write → edit)
+- [time-aware-agent](chapter5/time-aware-agent) - Dynamic instructions based on time and context
 
 ## Prerequisites
 
