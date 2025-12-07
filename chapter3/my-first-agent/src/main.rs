@@ -10,7 +10,7 @@ async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     println!("====================================\n");
     
     //  ✅ Check 1: Environment variable
-    dotenv::dotenv().ok();
+    dotenvy::dotenv().ok();
     print!("1. API Key... ");
     let api_key = std::env::var("GOOGLE_API_KEY")
         .expect("GOOGLE_API_KEY not set");

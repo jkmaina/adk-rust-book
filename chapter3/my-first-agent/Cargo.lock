@@ -130,9 +130,9 @@ dependencies = [
 
 [[package]]
 name = "adk-rust"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75ca132031902020087c9aaef15ee08adcb38fa6c982f6f2371578aec625113e"
+checksum = "73ca190b5d2d3c9abbb33e002e58625dbdabdf1d1c62233139ea10bc4f4847c7"
 dependencies = [
  "adk-agent",
  "adk-artifact",
@@ -747,10 +747,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "dotenv"
-version = "0.15.0"
+name = "dotenvy"
+version = "0.15.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77c90badedccf4105eca100756a0b1289e191f6fcbdadd3cee1d2f614f97da8f"
+checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
 
 [[package]]
 name = "dyn-clone"
@@ -1555,7 +1555,7 @@ name = "my-first-agent"
 version = "0.1.0"
 dependencies = [
  "adk-rust",
- "dotenv",
+ "dotenvy",
  "futures",
  "serde_json",
  "tokio",

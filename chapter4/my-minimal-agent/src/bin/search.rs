@@ -5,7 +5,7 @@ use std::sync::Arc;
 
 #[tokio::main]
 async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
-    dotenv::dotenv().ok();
+    dotenvy::dotenv().ok();
     
     let api_key = std::env::var("GOOGLE_API_KEY")
         .expect("GOOGLE_API_KEY environment variable not set");

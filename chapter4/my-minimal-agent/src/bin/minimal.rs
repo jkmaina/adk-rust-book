@@ -4,7 +4,7 @@ use std::sync::Arc;
 #[tokio::main]
 async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     // Load environment variables
-    dotenv::dotenv().ok();
+    dotenvy::dotenv().ok();
     
     // Get AP key
     let api_key = std::env::var("GOOGLE_API_KEY")
