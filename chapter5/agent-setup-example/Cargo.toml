@@ -1,0 +1,12 @@
+[package]
+name = "agent-setup-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+adk-agent = "0.1.1"
+adk-core = "0.1.1"
+adk-model = "0.1.1"
+adk-rust = "0.1.1"
+dotenv = "0.15.0"
+tokio = "1.48.0"
