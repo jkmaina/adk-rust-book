@@ -30,39 +30,26 @@ $env:GOOGLE_API_KEY = 'your_api_key_here'
 cargo run
 ```
 
-Example output:
-```
-Contact Extractor Agent: contact_extractor
-Extracts structured contact information from text.
+This launches an interactive session. Try these inputs:
 
-Example 1:
-Input: "Contact John Doe at john@example.com or call 555-1234"
-Output: {
+```
+You: Contact John Doe at john@example.com or call 555-1234
+Agent: {
   "name": "John Doe",
   "email": "john@example.com",
   "phone": "555-1234",
   "found": true
 }
 
-Example 2:
-Input: "Reach out to Alice Smith via alice.smith@company.com"
-Output: {
+You: Reach out to Alice Smith via alice.smith@company.com
+Agent: {
   "name": "Alice Smith",
   "email": "alice.smith@company.com",
   "found": true
 }
 
-Example 3:
-Input: "Bob Johnson, phone: (555) 987-6543"
-Output: {
-  "name": "Bob Johnson",
-  "phone": "(555) 987-6543",
-  "found": true
-}
-
-Example 4:
-Input: "No contact information here"
-Output: {
+You: No contact information here
+Agent: {
   "name": "",
   "found": false
 }
@@ -124,3 +111,5 @@ Output: {
 4. Chat bot: Capture contact info from conversations
 
 This pattern works for any extraction task—just change the schema!
+
+**Try it interactively**: The agent runs with Launcher, so you can test different text inputs and see the structured JSON output in real-time.

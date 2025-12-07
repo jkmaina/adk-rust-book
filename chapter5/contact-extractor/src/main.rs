@@ -1,3 +1,4 @@
+use adk_rust::Launcher;
 use adk_rust::prelude::*;
 use serde_json::json;
 use std::sync::Arc;
@@ -11,8 +12,8 @@ async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
 
     let extractor = LlmAgentBuilder::new("contact_extractor")
         .description("Extracts contact information from text")
-        .instruction("Extract name, email, and phone from the provided text.")
         .model(Arc::new(model))
+        .instruction("Extract name, email, and phone from the provided text.")
         .output_schema(json!({
             "type": "object",
             "properties": {
@@ -26,27 +27,10 @@ async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
         .build()?;
 
     println!("Contact Extractor Agent: {}", extractor.name());
-    println!("Extracts structured contact information from text.\n");
+    println!("This agent extracts structured contact information from text.");
+    println!("Try: 'Contact John Doe at john@example.com or call 555-1234'\n");
 
-    // Example inputs
-    let examples = vec![
-        "Contact John Doe at john@example.com or call 555-1234",
-        "Reach out to Alice Smith via alice.smith@company.com",
-        "Bob Johnson, phone: (555) 987-6543",
-        "No contact information here",
-    ];
-
-    for (i, input) in examples.iter().enumerate() {
-        println!("Example {}:", i + 1);
-        println!("Input: \"{}\"", input);
-        
-        let content = Content::new("user").with_text(input);
-        let response = extractor.run(content).await?;
-        
-        if let Some(text) = response.content.and_then(|c| c.text()) {
-            println!("Output: {}\n", text);
-        }
-    }
+    Launcher::new(Arc::new(extractor)).run().await?;
 
     Ok(())
 }
