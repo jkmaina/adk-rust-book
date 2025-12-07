@@ -44,6 +44,7 @@ Advanced agent patterns:
 
 - [multilingual-agent](chapter5/multilingual-agent) - Multi-language support with session state
 - [contact-extractor](chapter5/contact-extractor) - Extract structured contact info from text
+- [text-summarizer](chapter5/text-summarizer) - Summarize text and save to session state
 
 ## Prerequisites
 
