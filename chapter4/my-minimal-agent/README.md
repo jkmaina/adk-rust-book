@@ -1,72 +1,76 @@
-# my-minimal-agent
+# My Minimal Agent
 
-A small demo crate that contains three beginner-friendly binaries demonstrating a minimal agent, an interactive CLI and a search-enabled agent.
+**What:** Learn how to build agents with different capabilities through four example binaries.
 
-Quick prerequisites
-- Rust installed (rustup + cargo)
-- A `GOOGLE_API_KEY` environment variable or `.env` file for the GeminiModel (used by the interactive/search binaries)
--- Ensure your Rust toolchain is installed and any native build tools required for your platform are available (e.g., a system C/C++ toolchain if native crates require compilation).
+**Why:** See how agents evolve from basic to advanced—minimal setup, interactive chat, search tools, and custom functions.
 
-Available binaries
-- minimal  — create the agent and exit (no CLI)
-- interactive — interactive CLI assistant (launches a simple launcher)
-- search — interactive assistant that includes a `GoogleSearchTool` (this project includes a small stub tool so examples work without a real web search API)
-- custom_tools — a tiny interactive agent with a simple calculator FunctionTool (good for learning)
+## What This Example Shows
 
-How to run
+- **Four agent types**: Minimal, interactive, search-enabled, and tool-enabled
+- **Multiple binaries**: Different executables in one project
+- **Tool integration**: How agents use external tools (search, calculator)
+- **Progressive complexity**: Start simple, add features step by step
+
+## Prerequisites
+
+Set your Google API key in `.env` file:
+```text
+GOOGLE_API_KEY=your_api_key_here
+```
+
+Or in PowerShell:
 ```powershell
-Set-Location 'C:\Projects\adk-learning\my-minimal-agent'
+$env:GOOGLE_API_KEY = 'your_api_key_here'
+```
 
-# Build all binaries
-cargo build --bins
+## Run It
 
-# Run 'minimal'
+```bash
+# 1. Minimal agent (creates agent and exits)
 cargo run --bin minimal
 
-# Run the interactive CLI
+# 2. Interactive agent (chat in terminal)
 cargo run --bin interactive
 
-# Run the search-enabled assistant (uses the bundled stub GoogleSearchTool if you don't have an external search API)
+# 3. Search-enabled agent (can search the web)
 cargo run --bin search
 
-# Run the simple tools demo (calculator)
-```powershell
-# run the interactive calculator agent
+# 4. Calculator agent (can do math)
 cargo run --bin custom_tools
 ```
 
-How the calculator tool works (short & beginner-friendly)
-- When you run `custom_tools` you'll get an interactive launcher where you can ask math questions.
-- The calculator tool is intentionally small and flexible — examples the model might call internally:
+## Why This Matters
 
-1) Pass a simple expression string
-```json
-{"expression": "1+1"}
+Each binary teaches a different concept:
+- **minimal**: Basic agent creation
+- **interactive**: User interaction loop
+- **search**: Integrating external tools
+- **custom_tools**: Building your own tools
+
+## Beginner's Explanation
+
+**Multiple binaries** = Multiple programs in one project:
+```
+my-minimal-agent/
+├── src/
+    ├── bin/
+        ├── minimal.rs       (Binary 1)
+        ├── interactive.rs   (Binary 2)
+        ├── search.rs        (Binary 3)
+        └── custom_tools.rs  (Binary 4)
 ```
 
-2) Pass numbers and an operation
-```json
-{"a": 3, "b": 4, "operation": "multiply"}
+**Tools** = Functions agents can call:
+```
+You: "What is 25 * 4?"
+Agent: Calls calculator tool with {a: 25, b: 4, operation: "multiply"}
+Tool: Returns 100
+Agent: "The answer is 100"
 ```
 
-3) The tool also accepts a JSON string (some LLMs pass a stringified JSON) or nested wrappers like
-```json
-{"arguments": {"a":"2","b":"5","operation":"add"}}
-```
+**Calculator tool accepts**:
+- Simple expressions: `{"expression": "1+1"}`
+- Structured input: `{"a": 3, "b": 4, "operation": "multiply"}`
+- Operations: `add`, `subtract`, `multiply`, `divide`
 
-The tool accepts numbers as numbers or strings (e.g. `"a": "2"`) and supports `add`, `subtract`, `multiply`, and `divide`.
-If the tool can't parse the input it returns a small error object such as `{ "error": "could not parse expression" }`.
-
-This is a compact, learning-friendly example to help you experiment with how agents call tools and how function-call arguments can be shaped.
-```
-
-Using an API key
-- Add a `.env` file to the project root:
-  ```text
-  GOOGLE_API_KEY=your_api_key_here
-  ```
-  Or set the variable in PowerShell for the current session:
-  ```powershell
-  $env:GOOGLE_API_KEY = 'your_api_key_here'
-  ```
-
+This shows how agents become more powerful by adding tools!

@@ -1,22 +1,59 @@
-# agent-sandbox
+# Agent Sandbox
 
-A small example agent using adk-rust that launches an interactive assistant.
+**What:** An interactive AI assistant you can chat with in your terminal.
 
-Quick start (assumes Rust is already installed):
+**Why:** Experience how agents work by having a real conversation with one.
 
-1. Make sure you have an API key and set it in your environment or in a `.env` file:
-   - `.env` at project root:
-     ```text
-     GOOGLE_API_KEY=your_api_key_here
-     ```
-   - Or set it for the session (PowerShell):
-     ```powershell
-     $env:GOOGLE_API_KEY = 'YOUR_KEY'
-     ```
+## What This Example Shows
 
-2. Build + run:
-   ```powershell
-   cd agent-sandbox
-   cargo run
-   ```
+- **Interactive CLI**: Chat with your agent in real-time
+- **Agent launcher**: Setting up an interactive session
+- **Conversation loop**: Sending messages and receiving responses
+- **Real AI integration**: Using Gemini to power responses
 
+## Prerequisites
+
+Set your Google API key in `.env` file:
+```text
+GOOGLE_API_KEY=your_api_key_here
+```
+
+Or in PowerShell:
+```powershell
+$env:GOOGLE_API_KEY = 'your_api_key_here'
+```
+
+## Run It
+
+```bash
+cargo run
+```
+
+Then type your messages and press Enter. Type `exit` or `quit` to stop.
+
+## Why This Matters
+
+This is your playground for:
+- Testing agent behavior
+- Experimenting with prompts
+- Understanding how agents respond
+- Building intuition for agent development
+
+## Beginner's Explanation
+
+**Interactive agent** = A chatbot you control:
+```
+You: What is Rust?
+Agent: Rust is a systems programming language...
+You: Tell me more
+Agent: It focuses on safety and performance...
+```
+
+**How it works**:
+1. You type a message
+2. Agent sends it to Gemini
+3. Gemini generates a response
+4. Agent displays the response
+5. Repeat!
+
+This is your sandbox to experiment and learn how agents behave.
