@@ -48,6 +48,39 @@ Storing `Arc<dyn Agent>` in a `Vec` lets you build heterogeneous pipelines and c
 - Add unit tests for individual agent implementations.
 
 If you want, I can update the top-level README to link this example into the book's table of contents.
+
+## Exact behavior and example output
+
+When you run the program it constructs three agents and runs them in order:
+
+- `LlmAgent` named `llm-main` — prints a processing line, waits a short time, then prints done.
+- `CustomAgent` named `custom-echo` — prints received, waits, then prints finished.
+- `SequentialAgent` named `pipeline-1` — prints a starting line, then runs its two sub-agents in sequence:
+  - `llm-sub` (an `LlmAgent`)
+  - `custom-sub` (a `CustomAgent`)
+
+A representative run shows this sequence (timestamps removed):
+
+```
+=== Running agent: llm-main ===
+[LLM:llm-main] processing: Hello agent world
+[LLM:llm-main] done
+=== Running agent: custom-echo ===
+[Custom:custom-echo] received: Hello agent world
+[Custom:custom-echo] finished
+=== Running agent: pipeline-1 ===
+[Seq:pipeline-1] starting sequence
+[Seq:pipeline-1] -> running sub-agent llm-sub
+[LLM:llm-sub] processing: Hello agent world
+[LLM:llm-sub] done
+[Seq:pipeline-1] -> running sub-agent custom-sub
+[Custom:custom-sub] received: Hello agent world
+[Custom:custom-sub] finished
+[Seq:pipeline-1] sequence complete
+All agents finished.
+```
+
+This README now reflects the exact agents and names used in `src/main.rs`.
 A minimal example showing how to hold different agent implementations in a single vector using `Arc<dyn Agent>`.
 
 - Defines an async `Agent` trait (requires `async-trait` and `tokio`).
