@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="780" viewBox="0 0 1240 780" role="img" aria-labelledby="title desc">
+  <title id="title">Role-Aware Operations Assistant Architecture</title>
+  <desc id="desc">Architecture diagram showing users with different roles invoking the same assistant, with tool-level RBAC checks based on runtime user identity.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3d3227; stroke-width: 2; rx: 18; ry: 18; }
+      .state { fill: #f3e8c8; stroke: #8b6824; stroke-width: 2; rx: 16; ry: 16; }
+      .auth { fill: #f8e3d7; stroke: #985638; stroke-width: 2; rx: 18; ry: 18; }
+      .agent { fill: #dfeee7; stroke: #1d5c4c; stroke-width: 2; rx: 18; ry: 18; }
+      .tool { fill: #e8ecf8; stroke: #35588d; stroke-width: 2; rx: 16; ry: 16; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1240" height="780" />
+  <text class="title" x="60" y="58">Role-Aware Operations Assistant Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1120" height="66" />
+  <text class="text" x="84" y="120">The same prompt is issued by three users. The agent stays the same; the difference is in the tool-layer permission checks bound to runtime identity.</text>
+  <text class="small" x="84" y="144">This keeps authorization attached to actions instead of relying on prompt obedience.</text>
+
+  <rect class="auth" x="60" y="210" width="240" height="182" />
+  <text class="label" x="86" y="246">RBAC Policy</text>
+  <text class="small" x="86" y="276">viewer -> search</text>
+  <text class="small" x="86" y="300">analyst -> search + summarize</text>
+  <text class="small" x="86" y="324">admin -> search + summarize + restart</text>
+
+  <rect class="state" x="60" y="446" width="240" height="162" />
+  <text class="label" x="86" y="482">Session State</text>
+  <text class="small" x="86" y="512">ops:team</text>
+  <text class="small" x="86" y="536">ops:style</text>
+  <text class="small" x="86" y="560">ops:role</text>
+
+  <rect class="panel" x="360" y="300" width="220" height="120" />
+  <text class="label" x="386" y="336">Runner</text>
+  <text class="text" x="386" y="366">typed `UserId` + `SessionId`</text>
+  <text class="small" x="386" y="392">passes runtime identity</text>
+
+  <rect class="agent" x="650" y="230" width="220" height="170" />
+  <text class="label" x="684" y="266">Operations Assistant</text>
+  <text class="text" x="676" y="296">search guidance</text>
+  <text class="text" x="676" y="322">summarize incident</text>
+  <text class="text" x="676" y="348">request restart</text>
+
+  <rect class="tool" x="930" y="170" width="200" height="94" />
+  <text class="label" x="962" y="206">search_runbook</text>
+  <text class="small" x="962" y="232">read-only</text>
+
+  <rect class="tool" x="930" y="306" width="200" height="94" />
+  <text class="label" x="950" y="342">summarize_incident</text>
+  <text class="small" x="962" y="368">analyst and admin</text>
+
+  <rect class="tool" x="930" y="442" width="200" height="94" />
+  <text class="label" x="968" y="478">restart_service</text>
+  <text class="small" x="962" y="504">admin only</text>
+
+  <rect class="panel" x="930" y="586" width="200" height="96" />
+  <text class="label" x="980" y="622">Result</text>
+  <text class="small" x="962" y="650">allowed or denied</text>
+
+  <path class="arrow dashed" d="M300 300 L650 280" />
+  <path class="arrow dashed" d="M300 528 L650 350" />
+  <path class="arrow" d="M580 360 L650 320" />
+  <path class="arrow" d="M870 260 L930 216" />
+  <path class="arrow" d="M870 320 L930 352" />
+  <path class="arrow" d="M870 360 L930 488" />
+  <path class="arrow" d="M1030 264 L1030 586" />
+
+  <rect class="note" x="60" y="650" width="520" height="74" />
+  <text class="label" x="84" y="682">Design Choice</text>
+  <text class="small" x="84" y="706">The permission check lives in each tool so the action boundary remains enforceable even if the model requests an operation it should not perform.</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="760" viewBox="0 0 1220 760" role="img" aria-labelledby="title desc">
+  <title id="title">Guarded Agent Surface Architecture</title>
+  <desc id="desc">Architecture diagram showing raw user input entering a guardrail layer where PII is redacted and unsafe or off-topic content is blocked before a screened prompt reaches the assistant and callback.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3d3227; stroke-width: 2; rx: 18; ry: 18; }
+      .guard { fill: #f8e3d7; stroke: #985638; stroke-width: 2; rx: 18; ry: 18; }
+      .state { fill: #f3e8c8; stroke: #8b6824; stroke-width: 2; rx: 16; ry: 16; }
+      .agent { fill: #dfeee7; stroke: #1d5c4c; stroke-width: 2; rx: 18; ry: 18; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1220" height="760" />
+  <text class="title" x="60" y="58">Guarded Agent Surface Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1100" height="66" />
+  <text class="text" x="84" y="120">The key boundary is before model invocation. Unsafe content is blocked, sensitive content is transformed, and only the screened prompt reaches the assistant.</text>
+  <text class="small" x="84" y="144">This shows the difference between enforcement and post-screening observation.</text>
+
+  <rect class="panel" x="60" y="220" width="230" height="156" />
+  <text class="label" x="86" y="256">Raw User Input</text>
+  <text class="text" x="86" y="286">may contain PII</text>
+  <text class="text" x="86" y="312">may be unsafe</text>
+  <text class="text" x="86" y="338">may be off-topic</text>
+
+  <rect class="guard" x="360" y="190" width="280" height="218" />
+  <text class="label" x="386" y="226">Guardrail Layer</text>
+  <text class="text" x="386" y="258">PII redaction</text>
+  <text class="text" x="386" y="286">blocked-keyword filter</text>
+  <text class="text" x="386" y="314">topic boundary filter</text>
+  <text class="text" x="386" y="342">length checks</text>
+
+  <rect class="state" x="360" y="466" width="280" height="140" />
+  <text class="label" x="386" y="502">Session State</text>
+  <text class="small" x="386" y="530">assistant:domain</text>
+  <text class="small" x="386" y="554">assistant:tone</text>
+  <text class="text" x="386" y="582">applies only after screening</text>
+
+  <rect class="panel" x="710" y="220" width="220" height="130" />
+  <text class="label" x="736" y="256">Runner</text>
+  <text class="text" x="736" y="286">typed `UserId` + `SessionId`</text>
+  <text class="small" x="736" y="314">streams response</text>
+
+  <rect class="agent" x="980" y="190" width="180" height="152" />
+  <text class="label" x="1016" y="226">Assistant</text>
+  <text class="text" x="1006" y="256">answers only if</text>
+  <text class="text" x="1006" y="282">screening passed</text>
+
+  <rect class="panel" x="980" y="420" width="180" height="110" />
+  <text class="label" x="1016" y="456">Callback</text>
+  <text class="small" x="1006" y="484">observes screened prompt</text>
+  <text class="small" x="1006" y="506">for audit/logging</text>
+
+  <rect class="panel" x="710" y="456" width="220" height="150" />
+  <text class="label" x="736" y="492">Decision Paths</text>
+  <text class="small" x="736" y="520">1. transformed and allowed</text>
+  <text class="small" x="736" y="544">2. blocked unsafe</text>
+  <text class="small" x="736" y="568">3. blocked off-topic</text>
+
+  <path class="arrow" d="M290 300 L360 300" />
+  <path class="arrow dashed" d="M500 408 L500 466" />
+  <path class="arrow" d="M640 300 L710 286" />
+  <path class="arrow" d="M930 286 L980 266" />
+  <path class="arrow dashed" d="M1070 342 L1070 420" />
+  <path class="arrow" d="M640 330 L710 520" />
+
+  <rect class="note" x="60" y="650" width="500" height="74" />
+  <text class="label" x="84" y="682">Design Choice</text>
+  <text class="small" x="84" y="706">Keep enforcement outside the model. The callback adds visibility, but the guardrail layer makes the allow/block decision.</text>
+</svg>
