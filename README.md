@@ -38,6 +38,25 @@ The root workspace lets you compile the chapter crates together while still keep
 - [chapter15](chapter15): telemetry and observability examples
 - [chapter16](chapter16): auth, guardrails, audit, and retrieval governance
 
+## Concepts Covered
+
+- Rust foundations for agent systems: ownership, borrowing, traits, async, `Arc`, and `Result`
+- ADK-Rust architecture: service, agent, runner, and application layers
+- First-agent construction: model setup, session setup, runner wiring, and streamed responses
+- Instruction design and session-backed template personalization
+- Structured output and schema-shaped responses
+- Session history, keyed state, and persistent session backends
+- Function tools, multi-tool selection, and agent-as-tool delegation
+- Sequential, parallel, loop, and escalation workflows
+- Callbacks, plugins, and runtime guardrails
+- Memory, artifacts, embedding pipelines, and retrieval-augmented generation
+- Conditional routing, supervisor patterns, and graph-based coordination
+- Streaming, realtime interaction, reasoning traces, and launcher-based app wiring
+- Validation, smoke testing, and evaluation workflows
+- Deployment packaging, A2A servers, and A2A clients
+- Telemetry, spans, usage tracking, and observability patterns
+- Typed identity, RBAC, SSO, audit trails, and retrieval governance
+
 ## Quick Start
 
 ```bash
