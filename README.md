@@ -2,8 +2,6 @@
 
 This repository is the official runnable companion workspace for the ADK-Rust book.
 
-It contains the example crates only. The manuscript, mdBook source, chapter markdown, planning files, and legacy `.docx` source are intentionally excluded from this repository.
-
 ## Baseline
 
 - ADK-Rust crates: `0.8.2`
