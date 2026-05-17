@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="780" viewBox="0 0 1220 780" role="img" aria-labelledby="title desc">
+  <title id="title">Multilingual User Assistant Architecture</title>
+  <desc id="desc">Architecture diagram showing three user profile sessions feeding one adaptive assistant agent through a runner, with profile fields shaping the response language, tone, and depth.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3d3227; stroke-width: 2; rx: 18; ry: 18; }
+      .profile { fill: #e8ecf8; stroke: #35588d; stroke-width: 2; rx: 16; ry: 16; }
+      .state { fill: #f3e8c8; stroke: #8b6824; stroke-width: 2; rx: 16; ry: 16; }
+      .agent { fill: #dfeee7; stroke: #1d5c4c; stroke-width: 2; rx: 18; ry: 18; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1220" height="780" />
+  <text class="title" x="60" y="58">Multilingual User Assistant Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1090" height="66" />
+  <text class="text" x="84" y="120">One assistant agent serves multiple users. Session state changes the language, tone, and depth of the answer without changing the runtime shape.</text>
+  <text class="small" x="84" y="144">This is the simplest production-shaped personalization pattern: one agent, explicit user profiles, and scoped conversation history.</text>
+
+  <rect class="profile" x="60" y="210" width="240" height="118" />
+  <text class="label" x="86" y="244">Sofia Session</text>
+  <text class="small" x="86" y="272">language: Spanish</text>
+  <text class="small" x="86" y="294">expertise: beginner</text>
+  <text class="small" x="86" y="316">tone: warm</text>
+
+  <rect class="profile" x="60" y="360" width="240" height="118" />
+  <text class="label" x="86" y="394">Amelie Session</text>
+  <text class="small" x="86" y="422">language: French</text>
+  <text class="small" x="86" y="444">expertise: intermediate</text>
+  <text class="small" x="86" y="466">tone: concise</text>
+
+  <rect class="profile" x="60" y="510" width="240" height="118" />
+  <text class="label" x="86" y="544">Daniel Session</text>
+  <text class="small" x="86" y="572">language: English</text>
+  <text class="small" x="86" y="594">expertise: advanced</text>
+  <text class="small" x="86" y="616">tone: technical</text>
+
+  <rect class="state" x="360" y="250" width="260" height="328" />
+  <text class="label" x="386" y="286">Session State Model</text>
+  <text class="text" x="386" y="320">`user:name`</text>
+  <text class="text" x="386" y="348">`user:language`</text>
+  <text class="text" x="386" y="376">`user:expertise`</text>
+  <text class="text" x="386" y="404">`user:tone`</text>
+  <text class="text" x="386" y="432">`user:format`</text>
+  <text class="text" x="386" y="460">`user:analogy_preference`</text>
+  <text class="small" x="386" y="506">same keys, different values per session</text>
+  <text class="small" x="386" y="530">history stored alongside state</text>
+
+  <rect class="panel" x="700" y="106" width="250" height="108" />
+  <text class="label" x="726" y="142">Runner</text>
+  <text class="text" x="726" y="170">typed `UserId` + `SessionId`</text>
+  <text class="small" x="726" y="192">streams each answer</text>
+
+  <rect class="agent" x="680" y="260" width="300" height="206" />
+  <text class="label" x="706" y="296">Adaptive Assistant Agent</text>
+  <text class="text" x="706" y="328">instruction template reads</text>
+  <text class="text" x="706" y="354">language, expertise, tone,</text>
+  <text class="text" x="706" y="380">format, and analogy preference</text>
+  <text class="small" x="706" y="420">same code path for every user</text>
+
+  <rect class="panel" x="1040" y="250" width="140" height="118" />
+  <text class="label" x="1064" y="286">Output</text>
+  <text class="small" x="1064" y="314">Spanish beginner</text>
+  <text class="small" x="1064" y="336">French concise</text>
+  <text class="small" x="1064" y="358">English technical</text>
+
+  <rect class="note" x="700" y="520" width="480" height="138" />
+  <text class="label" x="726" y="556">Continuity</text>
+  <text class="text" x="726" y="586">A follow-up turn reuses the same Sofia session.</text>
+  <text class="small" x="726" y="612">The assistant keeps both profile state and recent conversation history.</text>
+  <text class="small" x="726" y="636">No new agent instance or manual prompt rewrite is required.</text>
+
+  <path class="arrow" d="M300 270 L360 300" />
+  <path class="arrow" d="M300 420 L360 414" />
+  <path class="arrow" d="M300 570 L360 528" />
+  <path class="arrow" d="M620 414 L680 362" />
+  <path class="arrow dashed" d="M825 214 L830 260" />
+  <path class="arrow" d="M980 320 L1040 320" />
+  <path class="arrow dashed" d="M830 466 L830 520" />
+
+  <rect class="note" x="60" y="662" width="560" height="74" />
+  <text class="label" x="84" y="694">Design Choice</text>
+  <text class="small" x="84" y="718">Keep personalization in session state instead of cloning or branching the agent definition per locale.</text>
+</svg>
