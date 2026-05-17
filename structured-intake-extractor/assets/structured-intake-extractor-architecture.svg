@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Structured Intake Extractor Architecture</title>
+  <desc id="desc">Architecture diagram showing free-form intake text flowing through the runner into a schema-constrained extractor agent that returns a stable JSON ticket object.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3d3227; stroke-width: 2; rx: 18; ry: 18; }
+      .input { fill: #f8e3d7; stroke: #985638; stroke-width: 2; rx: 16; ry: 16; }
+      .state { fill: #f3e8c8; stroke: #8b6824; stroke-width: 2; rx: 16; ry: 16; }
+      .agent { fill: #dfeee7; stroke: #1d5c4c; stroke-width: 2; rx: 18; ry: 18; }
+      .schema { fill: #e8ecf8; stroke: #35588d; stroke-width: 2; rx: 16; ry: 16; }
+      .output { fill: #e6f0dd; stroke: #4f6f23; stroke-width: 2; rx: 16; ry: 16; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="760" />
+  <text class="title" x="60" y="58">Structured Intake Extractor Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1050" height="66" />
+  <text class="text" x="84" y="120">The important boundary here is not a tool call or a workflow branch. It is the JSON schema that downstream systems can trust.</text>
+  <text class="small" x="84" y="144">Free-form text goes in; one stable ticket object comes out.</text>
+
+  <rect class="input" x="60" y="210" width="250" height="186" />
+  <text class="label" x="86" y="246">Free-Form Intake</text>
+  <text class="text" x="86" y="278">customer email or chat</text>
+  <text class="text" x="86" y="304">names, impact, urgency,</text>
+  <text class="text" x="86" y="330">contact details mixed</text>
+  <text class="text" x="86" y="356">with narrative text</text>
+
+  <rect class="state" x="60" y="454" width="250" height="154" />
+  <text class="label" x="86" y="490">Session State</text>
+  <text class="small" x="86" y="520">team:name</text>
+  <text class="small" x="86" y="542">team:queue_prefix</text>
+  <text class="small" x="86" y="564">team:triage_policy</text>
+
+  <rect class="panel" x="360" y="260" width="220" height="142" />
+  <text class="label" x="386" y="296">Runner</text>
+  <text class="text" x="386" y="326">typed `UserId` + `SessionId`</text>
+  <text class="small" x="386" y="354">streams the schema output</text>
+
+  <rect class="agent" x="640" y="210" width="250" height="218" />
+  <text class="label" x="666" y="246">Extractor Agent</text>
+  <text class="text" x="666" y="278">reads free-form intake</text>
+  <text class="text" x="666" y="304">applies session-backed</text>
+  <text class="text" x="666" y="330">triage preferences</text>
+  <text class="text" x="666" y="356">must return JSON only</text>
+
+  <rect class="schema" x="640" y="472" width="250" height="180" />
+  <text class="label" x="666" y="508">Output Schema</text>
+  <text class="small" x="666" y="538">requester_name</text>
+  <text class="small" x="666" y="560">issue_category</text>
+  <text class="small" x="666" y="582">severity</text>
+  <text class="small" x="666" y="604">recommended_queue</text>
+  <text class="small" x="666" y="626">missing_information[]</text>
+
+  <rect class="output" x="950" y="290" width="180" height="194" />
+  <text class="label" x="976" y="326">Structured Ticket</text>
+  <text class="text" x="976" y="356">predictable JSON object</text>
+  <text class="text" x="976" y="382">ready for validation,</text>
+  <text class="text" x="976" y="408">queueing, or storage</text>
+
+  <path class="arrow" d="M310 300 L360 320" />
+  <path class="arrow dashed" d="M310 530 L640 370" />
+  <path class="arrow" d="M580 320 L640 320" />
+  <path class="arrow dashed" d="M765 428 L765 472" />
+  <path class="arrow" d="M890 380 L950 380" />
+
+  <rect class="note" x="60" y="658" width="480" height="74" />
+  <text class="label" x="84" y="690">Design Choice</text>
+  <text class="small" x="84" y="714">Keep uncertainty visible by returning `missing_information` instead of pretending extraction is always complete.</text>
+</svg>
