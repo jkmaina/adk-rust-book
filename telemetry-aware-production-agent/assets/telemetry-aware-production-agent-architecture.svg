@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Telemetry-Aware Production Agent Architecture</title>
+  <desc id="desc">An ADK-Rust operator assistant instrumented with ingress, dependency, usage, and decision telemetry around an explicit runner.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f7f2; }
+      .panel { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 14; ry: 14; }
+      .soft { fill: #eef3ff; stroke: #335c99; stroke-width: 2; rx: 12; ry: 12; }
+      .accent { fill: #edf8f0; stroke: #2f6b47; stroke-width: 2; rx: 12; ry: 12; }
+      .warn { fill: #fff4e8; stroke: #9a5b15; stroke-width: 2; rx: 12; ry: 12; }
+      .title { font: 700 24px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .h2 { font: 700 17px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .body { font: 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+      .small { font: 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .arrow { stroke: #374151; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="980" height="560"/>
+  <text class="title" x="38" y="48">Telemetry-Aware Production Agent</text>
+  <text class="small" x="38" y="74">Observability is treated as part of the runtime boundary, not an afterthought.</text>
+
+  <rect class="panel" x="40" y="120" width="250" height="150"/>
+  <text class="h2" x="60" y="150">Operator Request</text>
+  <text class="body" x="60" y="182">- typed user identity</text>
+  <text class="body" x="60" y="208">- typed session identity</text>
+  <text class="body" x="60" y="234">- service + SLO context</text>
+
+  <rect class="soft" x="40" y="320" width="250" height="160"/>
+  <text class="h2" x="60" y="350">Explicit Runner</text>
+  <text class="body" x="60" y="382">- session load</text>
+  <text class="body" x="60" y="408">- prompt execution</text>
+  <text class="body" x="60" y="434">- streamed model response</text>
+  <text class="body" x="60" y="460">- visible execution boundary</text>
+
+  <rect class="accent" x="360" y="100" width="250" height="100"/>
+  <text class="h2" x="380" y="130">Ingress Telemetry</text>
+  <text class="body" x="380" y="162">request span + context attributes</text>
+  <text class="body" x="380" y="186">who asked, in which session</text>
+
+  <rect class="accent" x="360" y="230" width="250" height="100"/>
+  <text class="h2" x="380" y="260">Dependency Telemetry</text>
+  <text class="body" x="380" y="292">metrics backend lookup span</text>
+  <text class="body" x="380" y="316">latency and error signals</text>
+
+  <rect class="warn" x="360" y="360" width="250" height="100"/>
+  <text class="h2" x="380" y="390">Usage Telemetry</text>
+  <text class="body" x="380" y="422">token counts and cache reads</text>
+  <text class="body" x="380" y="446">cost visibility per request</text>
+
+  <rect class="panel" x="690" y="150" width="230" height="110"/>
+  <text class="h2" x="710" y="180">Agent Response</text>
+  <text class="body" x="710" y="212">- operational summary</text>
+  <text class="body" x="710" y="238">- next actions</text>
+
+  <rect class="panel" x="690" y="340" width="230" height="130"/>
+  <text class="h2" x="710" y="370">Observable Outcomes</text>
+  <text class="body" x="710" y="402">- logs for request context</text>
+  <text class="body" x="710" y="428">- spans for runtime phases</text>
+  <text class="body" x="710" y="454">- usage for cost analysis</text>
+
+  <path class="arrow" d="M290 195 H340"/>
+  <path class="arrow" d="M290 400 H340"/>
+  <path class="arrow" d="M610 150 H675"/>
+  <path class="arrow" d="M610 280 H675"/>
+  <path class="arrow" d="M610 410 H675"/>
+
+  <text class="small" x="300" y="188">request enters runtime</text>
+  <text class="small" x="300" y="390">runner executes agent</text>
+  <text class="small" x="620" y="142">response visibility</text>
+  <text class="small" x="620" y="272">service dependency evidence</text>
+  <text class="small" x="620" y="402">cost + diagnosis evidence</text>
+</svg>
