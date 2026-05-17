@@ -1,0 +1,47 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 505 >>
+stream
+BT
+/F1 12 Tf
+72 760 Td
+(Operations Sev-1 Playbook) Tj
+0 -24 Td
+(For a Sev-1 incident, the incident commander opens a bridge immediately.) Tj
+0 -18 Td
+(The primary on-call engineer, service owner, and communications lead are paged first.) Tj
+0 -18 Td
+(Status updates are posted every fifteen minutes until mitigation is complete.) Tj
+0 -18 Td
+(Vendor incident numbers are recorded during external outages.) Tj
+0 -18 Td
+(Customer support is informed before public status messaging is posted.) Tj
+0 -18 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+867
+%%EOF

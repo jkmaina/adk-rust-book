@@ -10,4 +10,8 @@ adk-rust = { workspace = true, features = ["agents", "gemini", "rag", "runner", 
 adk-tool.workspace = true
 anyhow.workspace = true
 dotenvy.workspace = true
+pdf-extract = "0.10.0"
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
 tokio.workspace = true
