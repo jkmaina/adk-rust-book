@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Deployment-Ready Agent Service Architecture</title>
+  <desc id="desc">One ADK-Rust agent reused across runner smoke checks, launcher entrypoints, and composed Axum or A2A server surfaces.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f7f2; }
+      .panel { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 14; ry: 14; }
+      .soft { fill: #eef3ff; stroke: #335c99; stroke-width: 2; rx: 12; ry: 12; }
+      .accent { fill: #edf8f0; stroke: #2f6b47; stroke-width: 2; rx: 12; ry: 12; }
+      .warn { fill: #fff4e8; stroke: #9a5b15; stroke-width: 2; rx: 12; ry: 12; }
+      .title { font: 700 24px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .h2 { font: 700 17px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .body { font: 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+      .small { font: 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .arrow { stroke: #374151; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="980" height="560"/>
+  <text class="title" x="38" y="48">Deployment-Ready Agent Service</text>
+  <text class="small" x="38" y="74">One release assistant agent exposed through runner, launcher, and composed server surfaces.</text>
+
+  <rect class="panel" x="40" y="110" width="250" height="170"/>
+  <text class="h2" x="60" y="140">Release Assistant Agent</text>
+  <text class="body" x="60" y="172">- Gemini-backed LLM agent</text>
+  <text class="body" x="60" y="198">- Operational rollout guidance</text>
+  <text class="body" x="60" y="224">- Concise, risk-aware responses</text>
+  <text class="body" x="60" y="250">- Shared across all delivery modes</text>
+
+  <rect class="soft" x="40" y="320" width="250" height="150"/>
+  <text class="h2" x="60" y="350">Session Context</text>
+  <text class="body" x="60" y="382">- team = platform engineering</text>
+  <text class="body" x="60" y="408">- environment = production</text>
+  <text class="body" x="60" y="434">- style = brief and operational</text>
+
+  <rect class="accent" x="370" y="110" width="240" height="120"/>
+  <text class="h2" x="390" y="140">Runner Smoke Path</text>
+  <text class="body" x="390" y="172">Direct session + content execution</text>
+  <text class="body" x="390" y="198">Used for simple validation before</text>
+  <text class="body" x="390" y="220">any deployment surface is involved</text>
+
+  <rect class="accent" x="370" y="270" width="240" height="120"/>
+  <text class="h2" x="390" y="300">Launcher Surface</text>
+  <text class="body" x="390" y="332">`chat` and `serve` modes reuse</text>
+  <text class="body" x="390" y="358">the same agent and services</text>
+
+  <rect class="warn" x="370" y="430" width="240" height="90"/>
+  <text class="h2" x="390" y="460">Composed App</text>
+  <text class="body" x="390" y="488">`build_app()` merges custom routes</text>
+  <text class="body" x="390" y="510">such as `/ops/ready`</text>
+
+  <rect class="panel" x="700" y="100" width="240" height="120"/>
+  <text class="h2" x="720" y="130">CLI / HTTP Users</text>
+  <text class="body" x="720" y="162">- release managers</text>
+  <text class="body" x="720" y="188">- operators using chat or REST</text>
+
+  <rect class="panel" x="700" y="260" width="240" height="120"/>
+  <text class="h2" x="720" y="290">Operations Routes</text>
+  <text class="body" x="720" y="322">- `/health`</text>
+  <text class="body" x="720" y="348">- `/ops/ready`</text>
+
+  <rect class="panel" x="700" y="420" width="240" height="120"/>
+  <text class="h2" x="720" y="450">A2A Consumers</text>
+  <text class="body" x="720" y="482">- agent card discovery</text>
+  <text class="body" x="720" y="508">- remote agent calls via `/a2a`</text>
+
+  <path class="arrow" d="M290 195 H355"/>
+  <path class="arrow" d="M290 395 H355"/>
+  <path class="arrow" d="M610 170 H685"/>
+  <path class="arrow" d="M610 330 H685"/>
+  <path class="arrow" d="M610 475 H685"/>
+
+  <text class="small" x="300" y="185">shared agent</text>
+  <text class="small" x="300" y="385">shared state</text>
+  <text class="small" x="622" y="160">chat / serve</text>
+  <text class="small" x="622" y="320">custom health endpoints</text>
+  <text class="small" x="622" y="465">A2A packaging</text>
+</svg>
