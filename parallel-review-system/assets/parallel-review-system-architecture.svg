@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">Parallel Review System Architecture</title>
+  <desc id="desc">Architecture diagram showing one proposal being reviewed concurrently by technical, product, and UX specialists under a shared session context through a ParallelAgent.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3d3227; stroke-width: 2; rx: 18; ry: 18; }
+      .state { fill: #f3e8c8; stroke: #8b6824; stroke-width: 2; rx: 16; ry: 16; }
+      .agent { fill: #dfeee7; stroke: #1d5c4c; stroke-width: 2; rx: 18; ry: 18; }
+      .output { fill: #e8ecf8; stroke: #35588d; stroke-width: 2; rx: 16; ry: 16; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1240" height="760" />
+  <text class="title" x="60" y="58">Parallel Review System Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1120" height="66" />
+  <text class="text" x="84" y="120">The same proposal enters three review lanes at once. The point is not one “best answer”; it is faster breadth across complementary decision lenses.</text>
+  <text class="small" x="84" y="144">Session state keeps the company, audience, and review stage consistent across all reviewers.</text>
+
+  <rect class="state" x="60" y="230" width="260" height="190" />
+  <text class="label" x="86" y="266">Session State</text>
+  <text class="small" x="86" y="294">review:company</text>
+  <text class="small" x="86" y="318">review:audience</text>
+  <text class="small" x="86" y="342">review:stage</text>
+  <text class="small" x="86" y="366">review:style</text>
+
+  <rect class="panel" x="60" y="470" width="260" height="130" />
+  <text class="label" x="86" y="506">Proposal Prompt</text>
+  <text class="text" x="86" y="536">feature proposal or</text>
+  <text class="text" x="86" y="562">launch-readiness question</text>
+
+  <rect class="panel" x="400" y="290" width="220" height="126" />
+  <text class="label" x="426" y="326">Runner</text>
+  <text class="text" x="426" y="356">typed `UserId` + `SessionId`</text>
+  <text class="small" x="426" y="384">streams combined output</text>
+
+  <rect class="panel" x="690" y="200" width="210" height="112" />
+  <text class="label" x="716" y="236">ParallelAgent</text>
+  <text class="text" x="716" y="266">launches review lanes</text>
+  <text class="text" x="716" y="290">concurrently</text>
+
+  <rect class="agent" x="650" y="360" width="180" height="142" />
+  <text class="label" x="676" y="396">Technical Reviewer</text>
+  <text class="small" x="676" y="424">implementation</text>
+  <text class="small" x="676" y="446">architecture risk</text>
+  <text class="small" x="676" y="468">rollout concerns</text>
+
+  <rect class="agent" x="870" y="360" width="180" height="142" />
+  <text class="label" x="906" y="396">Product Reviewer</text>
+  <text class="small" x="896" y="424">value and priority</text>
+  <text class="small" x="896" y="446">strategic fit</text>
+  <text class="small" x="896" y="468">tradeoffs</text>
+
+  <rect class="agent" x="760" y="550" width="180" height="142" />
+  <text class="label" x="814" y="586">UX Reviewer</text>
+  <text class="small" x="786" y="614">clarity</text>
+  <text class="small" x="786" y="636">discoverability</text>
+  <text class="small" x="786" y="658">friction</text>
+
+  <rect class="output" x="1070" y="430" width="120" height="146" />
+  <text class="label" x="1094" y="466">Output</text>
+  <text class="small" x="1094" y="494">three concurrent</text>
+  <text class="small" x="1094" y="516">perspectives</text>
+  <text class="small" x="1094" y="538">for one decision</text>
+
+  <path class="arrow dashed" d="M320 316 L650 410" />
+  <path class="arrow dashed" d="M320 332 L870 410" />
+  <path class="arrow dashed" d="M320 348 L760 620" />
+  <path class="arrow" d="M320 536 L400 352" />
+  <path class="arrow" d="M620 352 L690 256" />
+  <path class="arrow" d="M795 312 L740 360" />
+  <path class="arrow" d="M815 312 L960 360" />
+  <path class="arrow" d="M815 312 L850 550" />
+  <path class="arrow" d="M1050 430 L1070 476" />
+  <path class="arrow" d="M940 620 L1070 540" />
+
+  <rect class="note" x="60" y="648" width="520" height="74" />
+  <text class="label" x="84" y="680">Design Choice</text>
+  <text class="small" x="84" y="704">Keep perspectives separate so disagreement and tradeoffs stay visible instead of being flattened too early into one synthesized answer.</text>
+</svg>
