@@ -1838,6 +1838,9 @@ dependencies = [
  "adk-tool",
  "anyhow",
  "dotenvy",
+ "schemars",
+ "serde",
+ "serde_json",
  "tokio",
 ]
 
