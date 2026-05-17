@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="780" viewBox="0 0 1240 780" role="img" aria-labelledby="title desc">
+  <title id="title">Research Writing Workflow Architecture</title>
+  <desc id="desc">Architecture diagram showing session-backed publication preferences flowing through a sequential agent pipeline consisting of research, writing, and editing stages.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3d3227; stroke-width: 2; rx: 18; ry: 18; }
+      .state { fill: #f3e8c8; stroke: #8b6824; stroke-width: 2; rx: 16; ry: 16; }
+      .agent { fill: #dfeee7; stroke: #1d5c4c; stroke-width: 2; rx: 18; ry: 18; }
+      .output { fill: #e7edf8; stroke: #35588d; stroke-width: 2; rx: 16; ry: 16; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1240" height="780" />
+  <text class="title" x="60" y="58">Research Writing Workflow Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1120" height="66" />
+  <text class="text" x="84" y="120">The workflow is the main idea here. Content quality comes from staged handoff, not from one oversized prompt trying to do research, drafting, and editing at once.</text>
+  <text class="small" x="84" y="144">Session state keeps the publication profile stable across the whole pipeline.</text>
+
+  <rect class="state" x="60" y="224" width="260" height="206" />
+  <text class="label" x="86" y="260">Session State</text>
+  <text class="small" x="86" y="290">publication:name</text>
+  <text class="small" x="86" y="314">publication:audience</text>
+  <text class="small" x="86" y="338">publication:voice</text>
+  <text class="small" x="86" y="362">publication:length_target</text>
+  <text class="text" x="86" y="396">shared editorial profile</text>
+
+  <rect class="panel" x="380" y="224" width="210" height="126" />
+  <text class="label" x="406" y="260">Runner</text>
+  <text class="text" x="406" y="290">typed `UserId` + `SessionId`</text>
+  <text class="small" x="406" y="318">streams final output</text>
+
+  <rect class="agent" x="650" y="180" width="180" height="156" />
+  <text class="label" x="676" y="216">Researcher</text>
+  <text class="text" x="676" y="246">core thesis</text>
+  <text class="text" x="676" y="272">key points</text>
+  <text class="text" x="676" y="298">tradeoff / caution</text>
+
+  <rect class="agent" x="650" y="388" width="180" height="156" />
+  <text class="label" x="690" y="424">Writer</text>
+  <text class="text" x="676" y="454">turn notes into</text>
+  <text class="text" x="676" y="480">readable draft</text>
+
+  <rect class="agent" x="650" y="596" width="180" height="136" />
+  <text class="label" x="690" y="632">Editor</text>
+  <text class="text" x="676" y="662">refine structure,</text>
+  <text class="text" x="676" y="688">clarity, and tone</text>
+
+  <rect class="panel" x="930" y="272" width="230" height="164" />
+  <text class="label" x="956" y="308">SequentialAgent</text>
+  <text class="text" x="956" y="338">runs stages in order</text>
+  <text class="text" x="956" y="364">passes each output</text>
+  <text class="text" x="956" y="390">to the next stage</text>
+
+  <rect class="output" x="930" y="500" width="230" height="156" />
+  <text class="label" x="956" y="536">Final Article</text>
+  <text class="text" x="956" y="566">publishable version</text>
+  <text class="text" x="956" y="592">or executive variant</text>
+  <text class="small" x="956" y="622">same profile, new prompt</text>
+
+  <path class="arrow dashed" d="M320 326 L650 246" />
+  <path class="arrow dashed" d="M320 340 L650 454" />
+  <path class="arrow dashed" d="M320 354 L650 662" />
+  <path class="arrow" d="M590 286 L650 258" />
+  <path class="arrow" d="M740 336 L740 388" />
+  <path class="arrow" d="M740 544 L740 596" />
+  <path class="arrow" d="M830 258 L930 330" />
+  <path class="arrow" d="M830 466 L930 354" />
+  <path class="arrow" d="M830 664 L930 578" />
+  <path class="arrow" d="M1045 436 L1045 500" />
+
+  <rect class="note" x="60" y="662" width="460" height="78" />
+  <text class="label" x="84" y="694">Design Choice</text>
+  <text class="small" x="84" y="718">Keep research, drafting, and editing as separate stages so each prompt stays narrow and inspectable.</text>
+</svg>
