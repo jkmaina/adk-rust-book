@@ -1,0 +1,13 @@
+[package]
+name = "internal-knowledge-assistant"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-rag.workspace = true
+adk-rust = { workspace = true, features = ["agents", "gemini", "rag", "runner", "sessions", "tools"] }
+adk-tool.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+tokio.workspace = true

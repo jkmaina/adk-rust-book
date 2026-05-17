@@ -1,0 +1,12 @@
+[package]
+name = "iterative-content-refiner"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-rust = { workspace = true, features = ["agents", "gemini", "runner", "sessions", "tools"] }
+adk-tool.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+tokio.workspace = true

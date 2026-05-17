@@ -1831,6 +1831,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "customer-support-agent"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "adk-tool",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
+
+[[package]]
 name = "darling"
 version = "0.20.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1976,6 +1987,18 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "deployment-ready-agent-service"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "adk-server",
+ "anyhow",
+ "axum",
+ "dotenvy",
+ "tokio",
 ]
 
 [[package]]
@@ -2561,6 +2584,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "guarded-agent-surface"
+version = "0.1.0"
+dependencies = [
+ "adk-guardrail",
+ "adk-rust",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
+
+[[package]]
 name = "h2"
 version = "0.4.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2991,6 +3025,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "internal-knowledge-assistant"
+version = "0.1.0"
+dependencies = [
+ "adk-rag",
+ "adk-rust",
+ "adk-tool",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
+
+[[package]]
 name = "ipconfig"
 version = "0.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3014,6 +3060,17 @@ name = "is_terminal_polyfill"
 version = "1.70.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695"
+
+[[package]]
+name = "iterative-content-refiner"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "adk-tool",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
 
 [[package]]
 name = "itoa"
@@ -3420,6 +3477,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "multilingual-user-assistant"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
+
+[[package]]
 name = "neo4rs"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3671,6 +3738,16 @@ name = "outref"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1a80800c0488c3a21695ea981a54918fbb37abf04f4d0720c453632255e2ff0e"
+
+[[package]]
+name = "parallel-review-system"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
 
 [[package]]
 name = "parking"
@@ -4086,6 +4163,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "realtime-voice-assistant"
+version = "0.1.0"
+dependencies = [
+ "adk-realtime",
+ "anyhow",
+ "base64",
+ "dotenvy",
+ "rustls",
+ "tokio",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4241,6 +4330,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "research-writing-workflow"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+]
+
+[[package]]
 name = "resolv-conf"
 version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4268,6 +4367,21 @@ dependencies = [
  "libc",
  "untrusted 0.9.0",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "role-aware-operations-assistant"
+version = "0.1.0"
+dependencies = [
+ "adk-auth",
+ "adk-rust",
+ "adk-tool",
+ "anyhow",
+ "dotenvy",
+ "schemars",
+ "serde",
+ "serde_json",
+ "tokio",
 ]
 
 [[package]]
@@ -5102,6 +5216,19 @@ name = "structs-enums-example"
 version = "0.1.0"
 
 [[package]]
+name = "structured-intake-extractor"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "anyhow",
+ "dotenvy",
+ "schemars",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "strum"
 version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5197,6 +5324,18 @@ dependencies = [
  "filetime",
  "libc",
  "xattr",
+]
+
+[[package]]
+name = "telemetry-aware-production-agent"
+version = "0.1.0"
+dependencies = [
+ "adk-rust",
+ "adk-telemetry",
+ "anyhow",
+ "dotenvy",
+ "tokio",
+ "tracing",
 ]
 
 [[package]]

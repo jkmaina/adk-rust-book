@@ -72,6 +72,21 @@ The root workspace lets you compile the chapter crates together while still keep
 - A telemetry-aware production agent that emits logs, spans, and usage data for latency, cost, and failure analysis
 - A realtime voice or streaming assistant that handles incremental responses instead of waiting for one final blocking reply
 
+## Real-World Project Scaffolds
+
+- [customer-support-agent](customer-support-agent)
+- [internal-knowledge-assistant](internal-knowledge-assistant)
+- [multilingual-user-assistant](multilingual-user-assistant)
+- [structured-intake-extractor](structured-intake-extractor)
+- [research-writing-workflow](research-writing-workflow)
+- [parallel-review-system](parallel-review-system)
+- [iterative-content-refiner](iterative-content-refiner)
+- [guarded-agent-surface](guarded-agent-surface)
+- [role-aware-operations-assistant](role-aware-operations-assistant)
+- [deployment-ready-agent-service](deployment-ready-agent-service)
+- [telemetry-aware-production-agent](telemetry-aware-production-agent)
+- [realtime-voice-assistant](realtime-voice-assistant)
+
 ## Quick Start
 
 ```bash

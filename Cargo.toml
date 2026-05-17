@@ -17,6 +17,18 @@ members = [
     "chapter14/*",
     "chapter15/*",
     "chapter16/*",
+    "customer-support-agent",
+    "internal-knowledge-assistant",
+    "multilingual-user-assistant",
+    "structured-intake-extractor",
+    "research-writing-workflow",
+    "parallel-review-system",
+    "iterative-content-refiner",
+    "guarded-agent-surface",
+    "role-aware-operations-assistant",
+    "deployment-ready-agent-service",
+    "telemetry-aware-production-agent",
+    "realtime-voice-assistant",
 ]
 
 [workspace.package]
