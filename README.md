@@ -60,16 +60,3 @@ Opt-in live smoke validation:
 ```bash
 BOOK_RUN_LIVE_SMOKE=1 ./scripts/smoke-examples.sh
 ```
-
-## Publishing Rule
-
-If you update this repository from the manuscript workspace, copy only the example workspace files needed for readers:
-
-- chapter crates
-- root `Cargo.toml`
-- `Cargo.lock`
-- `rust-toolchain.toml`
-- example-oriented scripts
-- examples-only README updates
-
-Do not publish manuscript chapters or authoring assets here.
