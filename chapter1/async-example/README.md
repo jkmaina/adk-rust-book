@@ -46,3 +46,7 @@ Think of cooking dinner:
 - **Async**: Start pasta (10 min) → while waiting, start sauce (5 min) → while waiting, prep vegetables (3 min) = 10 min total
 
 Async lets your program multitask like a good chef!
+
+## ADK-Rust 0.8.0 Connection
+
+In ADK-Rust `0.8.0`, the fastest onboarding path is `adk_rust::run("instructions", "input").await`. That convenience works because the framework is async all the way down: model calls, runner execution, streaming, and tool coordination are built around futures. If `async` and `.await` make sense here, later ADK examples will feel much less mysterious.

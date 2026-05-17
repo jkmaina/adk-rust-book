@@ -1,0 +1,10 @@
+[package]
+name = "chapter15-telemetry-basic"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-telemetry.workspace = true
+tokio.workspace = true
+tracing.workspace = true

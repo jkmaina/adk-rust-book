@@ -1,0 +1,51 @@
+[workspace]
+resolver = "3"
+members = [
+    "chapter1/*",
+    "chapter2/*",
+    "chapter3/*",
+    "chapter4/*",
+    "chapter5/*",
+    "chapter6/*",
+    "chapter7/*",
+    "chapter8/*",
+    "chapter9/*",
+    "chapter10/*",
+    "chapter11/*",
+    "chapter12/*",
+    "chapter13/*",
+    "chapter14/*",
+    "chapter15/*",
+    "chapter16/*",
+]
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.92"
+
+[workspace.dependencies]
+adk-auth = "0.8.2"
+adk-core = "0.8.2"
+adk-eval = "0.8.2"
+adk-guardrail = "0.8.2"
+adk-plugin = "0.8.2"
+adk-rag = "0.8.2"
+adk-realtime = { version = "0.8.2", features = ["openai"] }
+adk-rust = { version = "0.8.2", default-features = false }
+adk-server = "0.8.2"
+adk-session = "0.8.2"
+adk-telemetry = "0.8.2"
+adk-tool = "0.8.2"
+anyhow = "1.0"
+async-trait = "0.1"
+axum = "0.8"
+base64 = "0.22"
+chrono = { version = "0.4", features = ["clock"] }
+dotenvy = "0.15"
+rustls = { version = "0.23", features = ["ring"] }
+schemars = "1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.40", features = ["full"] }
+tracing = "0.1"
+uuid = { version = "1.0", features = ["v4"] }

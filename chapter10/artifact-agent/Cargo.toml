@@ -1,0 +1,15 @@
+[package]
+name = "chapter10-artifact-agent"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-rust = { workspace = true, features = ["agents", "artifacts", "gemini", "sessions", "runner", "tools"] }
+adk-tool.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true

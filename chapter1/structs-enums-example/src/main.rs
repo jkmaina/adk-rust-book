@@ -28,10 +28,7 @@ impl User {
 
 fn main() {
     // Create a user using the constructor
-    let user1 = User::new(
-        String::from("alice"),
-        String::from("alice@example.com"),
-    );
+    let user1 = User::new(String::from("alice"), String::from("alice@example.com"));
 
     println!("User: {}", user1.username);
     println!("Email: {}", user1.email);

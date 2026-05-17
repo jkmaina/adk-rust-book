@@ -29,3 +29,10 @@ node_modules/
 
 # Environment files
 .env
+
+# Companion repo must never publish manuscript or authoring assets
+/src/
+/book.toml
+/catalog/
+/.kiro/
+*.docx

@@ -49,3 +49,7 @@ Thread 2 finishes → count = 2
 Thread 3 finishes → count = 1
 Main finishes → count = 0 (freed!)
 ```
+
+## ADK-Rust 0.8.0 Connection
+
+The new `provider_from_env()` helper in ADK-Rust `0.8.0` returns an `Arc<dyn Llm>`. That is a practical example of this exact ownership pattern. Models and services are often shared across runners, callbacks, and sub-agents, so cloning the handle must be cheap even when the underlying client is expensive. This example gives you the ownership intuition behind that design.

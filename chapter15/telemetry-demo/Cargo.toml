@@ -1,0 +1,13 @@
+[package]
+name = "chapter15-telemetry-demo"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-rust = { workspace = true, features = ["agents", "gemini", "runner", "sessions"] }
+adk-telemetry.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+tokio.workspace = true
+tracing.workspace = true

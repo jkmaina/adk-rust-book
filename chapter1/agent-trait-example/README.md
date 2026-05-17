@@ -48,3 +48,7 @@ CustomerServiceAgent:
 **Using it**: You can call methods on any Agent, knowing they have these methods!
 
 This is how you build extensible systems where different agents can plug in easily.
+
+## ADK-Rust 0.8.0 Connection
+
+ADK-Rust is built around traits even when builders make the top-level API feel simple. `LlmAgent`, workflow agents, models, tools, and services all depend on contract-based composition under the surface. This example introduces the mental model you need before later chapters start composing specialized agents or exposing one agent as a tool for another.

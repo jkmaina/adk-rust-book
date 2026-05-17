@@ -1,0 +1,11 @@
+[package]
+name = "chapter16-auth-audit"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-auth.workspace = true
+anyhow.workspace = true
+async-trait.workspace = true
+tokio.workspace = true

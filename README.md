@@ -1,119 +1,87 @@
-# ADK Rust Book - Learning Examples
+# ADK-Rust Book Companion Examples
 
-**What:** A hands-on guide to learning Rust and building AI agents with adk-rust.
+This repository is the official runnable companion workspace for the ADK-Rust book.
 
-**Why:** Learn Rust fundamentals and agent development through practical, runnable examples.
+It contains the example crates only. The manuscript, mdBook source, chapter markdown, planning files, and legacy `.docx` source are intentionally excluded from this repository.
 
-## Project Structure
+## Baseline
 
-### Chapter 1: Rust Fundamentals
-Core Rust concepts you need before building agents:
+- ADK-Rust crates: `0.8.2`
+- Rust: `1.92+`
+- Edition: `2024`
 
-- [variables-example](chapter1/variables-example) - Variables, mutability, and shadowing
-- [types-example](chapter1/types-example) - Rust's type system and inference
-- [functions-example](chapter1/functions-example) - Defining and using functions
-- [control-flow-example](chapter1/control-flow-example) - if/else, loops, and match
-- [borrowing-example](chapter1/borrowing-example) - References and borrowing
-- [structs-enums-example](chapter1/structs-enums-example) - Custom data types
-- [result-example](chapter1/result-example) - Error handling with Result
-- [prelude-example](chapter1/prelude-example) - What's available by default
-- [async-example](chapter1/async-example) - Async/await for concurrent code
-- [arc-example](chapter1/arc-example) - Shared ownership across threads
-- [agent-trait-example](chapter1/agent-trait-example) - Traits and polymorphism
+The root workspace lets you compile the chapter crates together while still keeping each example in its own directory.
 
-### Chapter 2: Agent Composition
-Building modular agent systems:
+## What Is Included
 
-- [agents-example](chapter2/agents-example) - Composing multiple agents with trait objects
+- `chapter1/` through `chapter16/`: runnable example crates grouped by chapter
+- `scripts/check-examples.sh`: offline workspace validation
+- `scripts/check-drift.py`: edition and dependency drift checks
+- `scripts/smoke-examples.sh`: opt-in live smoke runs for networked examples
 
-### Chapter 3: First Agents
-Your first working agents:
+## What Is Excluded
 
-- [hello-rust](chapter3/hello-rust) - Hello World in Rust
-- [my-first-agent](chapter3/my-first-agent) - Your first AI agent
-- [agent-sandbox](chapter3/agent-sandbox) - Interactive agent playground
+This repository should not contain:
 
-### Chapter 4: Advanced Agents
-Agents with tools and capabilities:
+- `src/` manuscript chapters
+- `book.toml`
+- `catalog/`
+- `.kiro/`
+- legacy manuscript exports such as `.docx`
 
-- [my-minimal-agent](chapter4/my-minimal-agent) - Four agent examples (minimal, interactive, search, calculator)
-- [structured_output](chapter4/structured_output) - Working with structured responses
+Those files belong in the authoring workspace, not the public companion examples repo.
 
-### Chapter 5: Advanced Topics
-Advanced agent patterns:
+## Repository Layout
 
-- [multilingual-agent](chapter5/multilingual-agent) - Multi-language support with session state
-- [contact-extractor](chapter5/contact-extractor) - Extract structured contact info from text
-- [text-summarizer](chapter5/text-summarizer) - Summarize text and save to session state
-- [agent-setup-example](chapter5/agent-setup-example) - Configure multi-agent pipeline (setup only)
-- [content-pipeline](chapter5/content-pipeline) - Multi-agent sequential pipeline (research → write → edit)
-- [time-aware-agent](chapter5/time-aware-agent) - Dynamic instructions based on time and context
-
-## Prerequisites
-
-- **Rust**: Install from [rustup.rs](https://rustup.rs)
-- **Google API Key**: Required for agent examples
-  - Get one from [Google AI Studio](https://makersuite.google.com/app/apikey)
-  - Set in `.env` file: `GOOGLE_API_KEY=your_api_key_here`
+- [chapter1](chapter1): Rust foundations examples
+- [chapter2](chapter2): architecture and composition examples
+- [chapter3](chapter3): first runnable ADK agents
+- [chapter4](chapter4): output control and first production levers
+- [chapter5](chapter5): session-backed agent behavior
+- [chapter6](chapter6): function tools and agent-as-tool patterns
+- [chapter7](chapter7): sequential, parallel, loop, and escalation workflows
+- [chapter8](chapter8): session backends and persistence
+- [chapter9](chapter9): callbacks, plugins, and guardrails
+- [chapter10](chapter10): memory, artifacts, and RAG
+- [chapter11](chapter11): routing and supervisor patterns
+- [chapter12](chapter12): streaming, realtime, reasoning, and launcher examples
+- [chapter13](chapter13): validation and evaluation examples
+- [chapter14](chapter14): deployment and A2A packaging examples
+- [chapter15](chapter15): telemetry and observability examples
+- [chapter16](chapter16): auth, guardrails, audit, and retrieval governance
 
 ## Quick Start
 
-1. Clone this repository
-2. Set up your API key (see Prerequisites)
-3. Navigate to any example directory
-4. Run `cargo run`
-
-## Learning Path
-
-**New to Rust?** Start here:
-1. Chapter 1 examples (in order)
-2. Chapter 3: hello-rust
-3. Chapter 3: my-first-agent
-
-**Know Rust?** Jump to:
-1. Chapter 3: my-first-agent
-2. Chapter 2: agents-example
-3. Chapter 4: my-minimal-agent
-
-## Running Examples
-
-Each example is a standalone Rust project:
-
 ```bash
-# Navigate to any example
-cd chapter1/variables-example
-
-# Run it
-cargo run
-
-# Or run specific binary (for multi-binary projects)
-cargo run --bin interactive
+cargo check --workspace
+cargo run -p chapter3-quickstart
 ```
 
-## Project Standards
+Examples that call live providers require credentials such as `GOOGLE_API_KEY` or `OPENAI_API_KEY`. The per-example READMEs call out those requirements.
 
-All READMEs follow this structure:
-- **What:** Brief description
-- **Why:** Why this matters
-- **What This Example Shows:** Key concepts
-- **Run It:** How to run with expected output
-- **Why This Matters:** Practical importance
-- **Beginner's Explanation:** Simple analogies and breakdowns
+## Validation
 
-## Contributing
+Offline validation:
 
-This is a learning project. Feel free to:
-- Add more examples
-- Improve explanations
-- Fix bugs
-- Suggest better analogies
+```bash
+./scripts/check-examples.sh
+```
 
-## Resources
+Opt-in live smoke validation:
 
-- [Rust Book](https://doc.rust-lang.org/book/) - Official Rust documentation
-- [adk-rust](https://github.com/anthropics/adk-rust) - Agent Development Kit
-- [Gemini API](https://ai.google.dev/) - Google's AI model
+```bash
+BOOK_RUN_LIVE_SMOKE=1 ./scripts/smoke-examples.sh
+```
 
-## License
+## Publishing Rule
 
-Educational use - check individual dependencies for their licenses.
+If you update this repository from the manuscript workspace, copy only the example workspace files needed for readers:
+
+- chapter crates
+- root `Cargo.toml`
+- `Cargo.lock`
+- `rust-toolchain.toml`
+- example-oriented scripts
+- examples-only README updates
+
+Do not publish manuscript chapters or authoring assets here.

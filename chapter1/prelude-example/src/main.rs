@@ -44,7 +44,9 @@ fn main() {
     println!("✓ Iterator with map: {:?}", doubled);
 
     // Commonly used traits
-    println!("✓ Clone, Copy, Debug, Display, Drop, Eq, Ord, PartialEq, PartialOrd - all from prelude");
+    println!(
+        "✓ Clone, Copy, Debug, Display, Drop, Eq, Ord, PartialEq, PartialOrd - all from prelude"
+    );
 
     // into(), to_string() - from prelude traits
     let num_string: String = 42.to_string();

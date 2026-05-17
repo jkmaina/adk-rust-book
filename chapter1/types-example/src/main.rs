@@ -6,10 +6,10 @@ fn main() {
 
     // ===== INTEGERS =====
     println!("--- Integers ---");
-    let x = 42;  // i32 is default integer type
-    let y: u32 = 100;  // explicitly unsigned 32-bit
-    let z: i64 = 9_223_372_036_854_775_807;  // max i64
-    let a: u8 = 255;  // max u8
+    let x = 42; // i32 is default integer type
+    let y: u32 = 100; // explicitly unsigned 32-bit
+    let z: i64 = 9_223_372_036_854_775_807; // max i64
+    let a: u8 = 255; // max u8
     println!("i32 (inferred): {}", x);
     println!("u32 (explicit): {}", y);
     println!("i64 (explicit): {}", z);
@@ -17,8 +17,8 @@ fn main() {
 
     // ===== FLOATS =====
     println!("\n--- Floating-point ---");
-    let pi = 3.14;  // f64 is default float type
-    let e: f32 = 2.718;  // explicitly 32-bit
+    let pi = 3.14; // f64 is default float type
+    let e: f32 = 2.718; // explicitly 32-bit
     println!("f64 (inferred): {}", pi);
     println!("f32 (explicit): {}", e);
 
@@ -41,7 +41,7 @@ fn main() {
     // ===== TUPLES =====
     println!("\n--- Tuples (fixed-size, mixed types) ---");
     let tup: (i32, f64, u8) = (500, 6.4, 1);
-    let (x, y, z) = tup;  // destructure tuple
+    let (x, y, z) = tup; // destructure tuple
     println!("tuple: ({}, {}, {})", x, y, z);
     println!("access by index: {} {} {}", tup.0, tup.1, tup.2);
 
@@ -61,18 +61,21 @@ fn main() {
     println!("array with explicit type: {:?}", arr2);
 
     // Array initialized with same value
-    let arr3 = [42; 5];  // five 42s
+    let arr3 = [42; 5]; // five 42s
     println!("array [42; 5]: {:?}", arr3);
 
     // ===== TYPE INFERENCE =====
     println!("\n--- Type Inference ---");
-    let num = 5;  // inferred as i32
-    let sum = num + 1;  // still i32
-    let product = num * 2;  // still i32
-    println!("inferred i32 operations: {} + 1 = {}, {} * 2 = {}", num, sum, num, product);
+    let num = 5; // inferred as i32
+    let sum = num + 1; // still i32
+    let product = num * 2; // still i32
+    println!(
+        "inferred i32 operations: {} + 1 = {}, {} * 2 = {}",
+        num, sum, num, product
+    );
 
     // Mixed types require explicit annotation
-    let mixed: f64 = num as f64 + pi;  // cast num to f64
+    let mixed: f64 = num as f64 + pi; // cast num to f64
     println!("mixed (i32 as f64 + f64): {}", mixed);
 
     println!("\n=== Type System Summary ===");

@@ -12,7 +12,9 @@ pub struct CustomerServiceAgent {
 
 impl CustomerServiceAgent {
     pub fn new(name: &str) -> Self {
-        Self { agent_name: name.to_string() }
+        Self {
+            agent_name: name.to_string(),
+        }
     }
 }
 

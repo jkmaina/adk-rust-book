@@ -1,0 +1,10 @@
+[package]
+name = "chapter16-auth-sso"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-auth = { workspace = true, features = ["sso"] }
+anyhow.workspace = true
+tokio.workspace = true

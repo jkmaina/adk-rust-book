@@ -1,4 +1,4 @@
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration, sleep};
 
 async fn do_something() {
     println!("Doing something async");

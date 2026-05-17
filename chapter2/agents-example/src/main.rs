@@ -1,6 +1,6 @@
 use async_trait::async_trait;
 use std::sync::Arc;
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration, sleep};
 
 // Define an async Agent trait; Send + Sync so we can put trait objects in Arc
 #[async_trait]
@@ -15,7 +15,9 @@ pub struct LlmAgent {
 }
 impl LlmAgent {
     pub fn new(name: &str) -> Self {
-        Self { name: name.to_string() }
+        Self {
+            name: name.to_string(),
+        }
     }
 }
 
@@ -40,7 +42,9 @@ pub struct CustomAgent {
 }
 impl CustomAgent {
     pub fn new(name: &str) -> Self {
-        Self { name: name.to_string() }
+        Self {
+            name: name.to_string(),
+        }
     }
 }
 
@@ -65,7 +69,10 @@ pub struct SequentialAgent {
 }
 impl SequentialAgent {
     pub fn new(name: &str, subs: Vec<Arc<dyn Agent>>) -> Self {
-        Self { name: name.to_string(), subagents: subs }
+        Self {
+            name: name.to_string(),
+            subagents: subs,
+        }
     }
 }
 

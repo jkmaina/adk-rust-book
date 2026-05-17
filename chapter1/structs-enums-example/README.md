@@ -48,3 +48,7 @@ C) Write (text)
 ```
 User::new("alice", "alice@example.com")  // Create a user easily
 ```
+
+## ADK-Rust 0.8.0 Connection
+
+This is where strong typing stops being abstract. In ADK-Rust `0.8.0`, `Runner::run()` takes `UserId` and `SessionId` types instead of plain strings. That is the same design instinct you see in this example: use explicit types to make valid program flows easier to read and invalid states harder to represent.

@@ -70,3 +70,7 @@ SequentialAgent {
 ```
 
 This is how you build flexible agent systems where agents can be mixed, matched, and composed!
+
+## ADK-Rust 0.8.0 Connection
+
+This example is intentionally conceptual. In ADK-Rust `0.8.0`, the stable core uses the same ideas at a larger scale: trait-based agents, `Arc` for shared ownership, async execution, and composed workflows. What this example leaves out on purpose is the runner and service layer. Chapter 3 adds the real runtime surface with sessions, runner orchestration, and streamed events.
