@@ -20,7 +20,7 @@ This example shows how to package one ADK-Rust agent for more than one delivery 
 
 ## Architecture
 
-![Deployment-Ready Agent Service Architecture](/Users/jameskaranja/Developer/projects/adk-rust-book-companion/deployment-ready-agent-service/assets/deployment-ready-agent-service-architecture.svg)
+![Deployment-Ready Agent Service Architecture](./assets/deployment-ready-agent-service-architecture.svg)
 
 ### System Overview: How it Works
 
