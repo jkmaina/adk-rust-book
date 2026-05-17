@@ -19,18 +19,6 @@ The root workspace lets you compile the chapter crates together while still keep
 - `scripts/check-drift.py`: edition and dependency drift checks
 - `scripts/smoke-examples.sh`: opt-in live smoke runs for networked examples
 
-## What Is Excluded
-
-This repository should not contain:
-
-- `src/` manuscript chapters
-- `book.toml`
-- `catalog/`
-- `.kiro/`
-- legacy manuscript exports such as `.docx`
-
-Those files belong in the authoring workspace, not the public companion examples repo.
-
 ## Repository Layout
 
 - [chapter1](chapter1): Rust foundations examples
