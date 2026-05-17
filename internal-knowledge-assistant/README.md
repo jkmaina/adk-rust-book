@@ -23,6 +23,57 @@ The example still keeps the pipeline local and simple:
 
 In production, teams usually extend this with OCR, document versioning, background ingestion jobs, metadata indexing, and access control per collection.
 
+## Architecture
+
+![Internal Knowledge Assistant Architecture](./assets/internal-knowledge-assistant-architecture.svg)
+
+### System Overview: How it Works
+
+- The **PDF fixtures** are the source of truth for policy content in this example.
+- The **extraction and ingestion step** reads those PDFs at startup, normalizes the text, and creates `Document` values for the RAG pipeline.
+- The **RAG pipeline** owns chunking, embeddings, and vector search across three named collections.
+- The **typed retrieval tools** expose one collection each instead of one global search surface.
+- The **specialist agents** answer only within their own domain.
+- The **coordinator agent** owns routing and returns a single final answer to the employee.
+- The **runner** owns the runtime boundary: app name, root agent, session service, typed user/session identity, and streamed output.
+
+### Design Choices
+
+- **PDF-backed ingestion instead of inline policy strings**
+  This keeps the example closer to how internal assistants work in practice. The knowledge base starts as documents, not code literals.
+
+- **Scoped collections instead of one shared knowledge pool**
+  Engineering, HR, and operations documents stay separated. That makes routing more explicit and reduces accidental cross-domain retrieval.
+
+- **One retrieval tool per collection**
+  A narrow tool contract makes the retrieval boundary visible in code. It also gives a cleaner path to future access control than a single unrestricted search tool.
+
+- **Coordinator plus specialists instead of one large RAG agent**
+  The coordinator handles conversation flow. Specialists handle domain retrieval. That keeps the prompt surface smaller and the architecture easier to extend.
+
+- **Startup extraction instead of background ingestion infrastructure**
+  For a companion example, startup ingestion is the right tradeoff. It keeps the project runnable in one command while still demonstrating a real document path.
+
+### Request Flow
+
+1. The application loads PDF documents from `assets/policies/`.
+2. Text is extracted and ingested into scoped RAG collections.
+3. The caller sends a question with a typed `UserId` and `SessionId`.
+4. The runner invokes the coordinator agent.
+5. The coordinator delegates to the correct specialist.
+6. The specialist calls its scoped retrieval tool.
+7. Retrieved text comes back from the relevant collection.
+8. The coordinator returns one final employee-facing answer.
+
+### Why This Architecture Fits The Book
+
+- It shows the Chapter 3 runtime model directly through the explicit runner boundary.
+- It applies the Chapter 5 session-state model to personalize responses.
+- It uses Chapter 6 typed tools to make retrieval scope explicit.
+- It uses the Chapter 7 delegation pattern to keep a multi-domain workflow understandable.
+- It turns the Chapter 10 RAG material into a more realistic document-backed system.
+- It reinforces the Chapter 16 principle that operational boundaries should be visible in code, not only implied by prompts.
+
 ## What the Assistant Does
 
 The example builds a small internal assistant with three PDF-backed knowledge domains:

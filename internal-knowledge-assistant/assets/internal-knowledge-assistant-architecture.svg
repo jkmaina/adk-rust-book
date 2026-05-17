@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820" role="img" aria-labelledby="title desc">
+  <title id="title">Internal Knowledge Assistant Architecture</title>
+  <desc id="desc">Architecture diagram showing PDF policy documents being extracted into a RAG pipeline, exposed through scoped tools and specialist agents, coordinated by one root agent through the runner.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .panel { fill: #fffdf8; stroke: #3e3327; stroke-width: 2; rx: 18; ry: 18; }
+      .pdf { fill: #f8e2d7; stroke: #965638; stroke-width: 2; rx: 14; ry: 14; }
+      .rag { fill: #dfeee7; stroke: #1c5d4b; stroke-width: 2; rx: 16; ry: 16; }
+      .tool { fill: #e6ecf8; stroke: #35588d; stroke-width: 2; rx: 14; ry: 14; }
+      .agent { fill: #e7f1d8; stroke: #5d7a1f; stroke-width: 2; rx: 16; ry: 16; }
+      .state { fill: #f3e7c7; stroke: #8b6924; stroke-width: 2; rx: 16; ry: 16; }
+      .note { fill: #f2ede5; stroke: #655a4f; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a15; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a15; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4e473f; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="820" />
+  <text class="title" x="60" y="58">Internal Knowledge Assistant Architecture</text>
+
+  <rect class="note" x="60" y="92" width="1150" height="66" />
+  <text class="text" x="84" y="120">The knowledge source starts as PDF documents. Text is extracted at startup, ingested into scoped collections, and then exposed through specialist agents.</text>
+  <text class="small" x="84" y="144">The coordinator owns conversation flow; retrieval scope stays attached to domain specialists.</text>
+
+  <rect class="pdf" x="60" y="210" width="220" height="106" />
+  <text class="label" x="85" y="244">Engineering PDF</text>
+  <text class="small" x="85" y="272">`engineering-deployments.pdf`</text>
+
+  <rect class="pdf" x="60" y="338" width="220" height="106" />
+  <text class="label" x="85" y="372">HR PDF</text>
+  <text class="small" x="85" y="400">`hr-pto-policy.pdf`</text>
+
+  <rect class="pdf" x="60" y="466" width="220" height="106" />
+  <text class="label" x="85" y="500">Ops PDF</text>
+  <text class="small" x="85" y="528">`ops-sev1-playbook.pdf`</text>
+
+  <rect class="panel" x="330" y="250" width="240" height="176" />
+  <text class="label" x="354" y="286">Extraction + Ingestion</text>
+  <text class="text" x="354" y="316">`pdf_extract::extract_text`</text>
+  <text class="text" x="354" y="342">normalize text</text>
+  <text class="text" x="354" y="368">create `Document` values</text>
+  <text class="small" x="354" y="398">startup-time local pipeline</text>
+
+  <rect class="rag" x="620" y="210" width="270" height="250" />
+  <text class="label" x="646" y="246">RAG Pipeline</text>
+  <text class="text" x="646" y="278">Hash embedder</text>
+  <text class="text" x="646" y="304">fixed-size chunker</text>
+  <text class="text" x="646" y="330">in-memory vector store</text>
+  <text class="text" x="646" y="356">collections:</text>
+  <text class="small" x="666" y="382">engineering-docs</text>
+  <text class="small" x="666" y="404">hr-policies</text>
+  <text class="small" x="666" y="426">ops-playbooks</text>
+
+  <rect class="tool" x="560" y="540" width="220" height="88" />
+  <text class="label" x="584" y="574">`search_engineering_docs`</text>
+  <text class="small" x="584" y="600">scoped retrieval tool</text>
+
+  <rect class="tool" x="800" y="540" width="180" height="88" />
+  <text class="label" x="824" y="574">`search_hr_policies`</text>
+  <text class="small" x="824" y="600">scoped retrieval tool</text>
+
+  <rect class="tool" x="1000" y="540" width="180" height="88" />
+  <text class="label" x="1024" y="574">`search_ops_playbooks`</text>
+  <text class="small" x="1024" y="600">scoped retrieval tool</text>
+
+  <rect class="agent" x="560" y="670" width="220" height="100" />
+  <text class="label" x="585" y="705">Engineering Specialist</text>
+  <text class="small" x="585" y="732">deployment and architecture</text>
+
+  <rect class="agent" x="800" y="670" width="180" height="100" />
+  <text class="label" x="828" y="705">HR Specialist</text>
+  <text class="small" x="828" y="732">PTO and workplace policy</text>
+
+  <rect class="agent" x="1000" y="670" width="180" height="100" />
+  <text class="label" x="1023" y="705">Ops Specialist</text>
+  <text class="small" x="1023" y="732">incident response</text>
+
+  <rect class="agent" x="940" y="220" width="250" height="150" />
+  <text class="label" x="966" y="256">Coordinator Agent</text>
+  <text class="text" x="966" y="286">routes by domain</text>
+  <text class="text" x="966" y="312">returns one final answer</text>
+  <text class="small" x="966" y="340">root agent passed to the runner</text>
+
+  <rect class="state" x="940" y="398" width="250" height="110" />
+  <text class="label" x="966" y="434">Session State</text>
+  <text class="small" x="966" y="462">employee:name</text>
+  <text class="small" x="966" y="484">employee:team, employee:style</text>
+
+  <rect class="panel" x="940" y="96" width="250" height="92" />
+  <text class="label" x="966" y="130">Runner</text>
+  <text class="text" x="966" y="158">typed `UserId` + `SessionId`</text>
+  <text class="small" x="966" y="180">streams final response</text>
+
+  <path class="arrow" d="M280 262 L330 300" />
+  <path class="arrow" d="M280 390 L330 338" />
+  <path class="arrow" d="M280 518 L330 376" />
+  <path class="arrow" d="M570 338 L620 338" />
+  <path class="arrow" d="M890 300 L940 300" />
+  <path class="arrow dashed" d="M940 452 L900 452" />
+  <path class="arrow" d="M1040 188 L1065 220" />
+  <path class="arrow" d="M720 460 L670 540" />
+  <path class="arrow" d="M760 460 L890 540" />
+  <path class="arrow" d="M800 460 L1085 540" />
+  <path class="arrow" d="M670 628 L670 670" />
+  <path class="arrow" d="M890 628 L890 670" />
+  <path class="arrow" d="M1090 628 L1090 670" />
+  <path class="arrow" d="M1065 370 L670 670" />
+  <path class="arrow" d="M1080 370 L890 670" />
+  <path class="arrow" d="M1095 370 L1090 670" />
+
+  <rect class="note" x="60" y="640" width="430" height="98" />
+  <text class="label" x="84" y="674">Design Choice</text>
+  <text class="small" x="84" y="702">Keep document scope attached to specialists instead of giving one agent unrestricted search.</text>
+  <text class="small" x="84" y="724">That makes routing, governance, and future access control easier to reason about.</text>
+</svg>
