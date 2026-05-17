@@ -57,7 +57,7 @@ The root workspace lets you compile the chapter crates together while still keep
 - Telemetry, spans, usage tracking, and observability patterns
 - Typed identity, RBAC, SSO, audit trails, and retrieval governance
 
-## Real-World Systems You Can Build
+## Real-World AI Agent Systems You Can Build
 
 - A customer support agent that looks up order status, escalates refunds, and enforces role boundaries
 - An internal knowledge assistant with scoped RAG collections for engineering docs, HR policies, and operations playbooks
