@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Customer Support Agent Architecture</title>
+  <desc id="desc">Architecture diagram showing the customer prompt flowing through the runner to a coordinator agent, which delegates to order and billing specialists backed by typed tools and shared session state.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8f5ef; }
+      .panel { fill: #fffdf8; stroke: #3b3024; stroke-width: 2; rx: 18; ry: 18; }
+      .agent { fill: #dceee7; stroke: #1e5b4f; stroke-width: 2; rx: 16; ry: 16; }
+      .tool { fill: #e8edf8; stroke: #31548a; stroke-width: 2; rx: 14; ry: 14; }
+      .state { fill: #f5e8cf; stroke: #8a6422; stroke-width: 2; rx: 16; ry: 16; }
+      .note { fill: #f3efe8; stroke: #5f554b; stroke-width: 1.5; rx: 14; ry: 14; }
+      .title { font: 700 28px Georgia, "Times New Roman", serif; fill: #1f1a16; }
+      .label { font: 700 18px "Helvetica Neue", Arial, sans-serif; fill: #1f1a16; }
+      .text { font: 15px "Helvetica Neue", Arial, sans-serif; fill: #2d2823; }
+      .small { font: 13px "Helvetica Neue", Arial, sans-serif; fill: #4a433b; }
+      .arrow { stroke: #2b2621; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#2b2621" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="760" />
+  <text class="title" x="60" y="60">Customer Support Agent Architecture</text>
+
+  <rect class="note" x="60" y="95" width="1080" height="64" />
+  <text class="text" x="84" y="122">One session, two specialist agents, three typed tools. The coordinator owns conversation flow; tools own business rules.</text>
+  <text class="small" x="84" y="145">This keeps prompts readable, runtime identity explicit, and refund policy enforcement outside prompt-only instructions.</text>
+
+  <rect class="panel" x="60" y="190" width="230" height="150" />
+  <text class="label" x="84" y="225">Customer Prompt</text>
+  <text class="text" x="84" y="255">"Check order 1001"</text>
+  <text class="text" x="84" y="280">"Refund if possible"</text>
+  <text class="small" x="84" y="313">Typed `UserId` + `SessionId`</text>
+
+  <rect class="panel" x="340" y="190" width="250" height="150" />
+  <text class="label" x="364" y="225">Runner</text>
+  <text class="text" x="364" y="255">`Runner::builder()`</text>
+  <text class="text" x="364" y="280">streams events back to caller</text>
+  <text class="small" x="364" y="313">owns app name, agent root, session service</text>
+
+  <rect class="agent" x="650" y="180" width="260" height="170" />
+  <text class="label" x="676" y="215">Coordinator Agent</text>
+  <text class="text" x="676" y="245">personalized with session state</text>
+  <text class="text" x="676" y="270">delegates instead of doing</text>
+  <text class="text" x="676" y="295">order or billing work itself</text>
+  <text class="small" x="676" y="325">Chapter 5 + 7 pattern</text>
+
+  <rect class="agent" x="560" y="430" width="250" height="150" />
+  <text class="label" x="585" y="465">Order Specialist</text>
+  <text class="text" x="585" y="495">reads order facts</text>
+  <text class="text" x="585" y="520">explains status and issue</text>
+
+  <rect class="agent" x="860" y="430" width="250" height="150" />
+  <text class="label" x="885" y="465">Billing Specialist</text>
+  <text class="text" x="885" y="495">decides refund vs escalation</text>
+  <text class="text" x="885" y="520">creates ticket when required</text>
+
+  <rect class="tool" x="470" y="635" width="220" height="78" />
+  <text class="label" x="494" y="670">`lookup_order`</text>
+  <text class="small" x="494" y="694">typed order lookup tool</text>
+
+  <rect class="tool" x="760" y="620" width="180" height="78" />
+  <text class="label" x="784" y="655">`issue_refund`</text>
+  <text class="small" x="784" y="679">code-level refund rules</text>
+
+  <rect class="tool" x="960" y="620" width="180" height="78" />
+  <text class="label" x="984" y="655">`create_support_ticket`</text>
+  <text class="small" x="984" y="679">escalation workflow</text>
+
+  <rect class="state" x="920" y="180" width="220" height="170" />
+  <text class="label" x="945" y="215">Session State</text>
+  <text class="text" x="945" y="245">`customer:name`</text>
+  <text class="text" x="945" y="270">`customer:tier`</text>
+  <text class="text" x="945" y="295">`customer:style`</text>
+  <text class="small" x="945" y="325">drives prompt templating</text>
+
+  <path class="arrow" d="M290 265 L340 265" />
+  <path class="arrow" d="M590 265 L650 265" />
+  <path class="arrow dashed" d="M920 265 L910 265" />
+  <path class="arrow" d="M760 350 L685 430" />
+  <path class="arrow" d="M800 350 L985 430" />
+  <path class="arrow" d="M685 580 L585 635" />
+  <path class="arrow" d="M985 580 L850 620" />
+  <path class="arrow" d="M1020 580 L1050 620" />
+
+  <rect class="note" x="60" y="640" width="330" height="78" />
+  <text class="label" x="84" y="672">Design Choice</text>
+  <text class="small" x="84" y="697">Keep orchestration in the coordinator and policy in tools.</text>
+</svg>
