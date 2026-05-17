@@ -45,6 +45,6 @@ let numbers = vec![1, 2, 3];  // Vec is ready to go!
 
 Rust does this automatically so you can focus on your code, not imports.
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 Later chapters frequently use `use adk_rust::prelude::*` to keep examples readable. That works for the same reason Rust's standard prelude works: it brings the common building blocks into scope so the code can emphasize agent behavior instead of import noise.

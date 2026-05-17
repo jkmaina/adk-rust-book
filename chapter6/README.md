@@ -9,7 +9,7 @@ Chapter 6 is where the book moves from agent behavior to agent capability. The e
 - Rust `1.92+`
 - Cargo `1.92+`
 - edition `2024`
-- local `adk-rust` `0.8.0` workspace
+- local `adk-rust` `0.8.2` workspace
 - `GOOGLE_API_KEY` for live Gemini runs
 
 ## Included Crates
@@ -18,11 +18,11 @@ Chapter 6 is where the book moves from agent behavior to agent capability. The e
 - `chapter6-multi-tools`
 - `chapter6-agent-tool`
 
-## How This Chapter Fits ADK-Rust 0.8.0
+## How This Chapter Fits ADK-Rust 0.8.2
 
 - `#[tool]` is the preferred zero-boilerplate path for ordinary custom tools in this repo
-- `0.8.0` also broadened the tool story with provider-native built-in tool wrappers and richer MCP support, but this chapter keeps the learning surface legible by starting with typed custom tools
-- the `AgentTool` example is more trustworthy in `0.8.0` because the runtime fixed a sub-agent response-extraction issue that could previously lead to repeated delegation loops
+- `0.8.2` also broadened the tool story with provider-native built-in tool wrappers and richer MCP support, but this chapter keeps the learning surface legible by starting with typed custom tools
+- the `AgentTool` example is more trustworthy in `0.8.2` because the runtime fixed a sub-agent response-extraction issue that could previously lead to repeated delegation loops
 - the examples keep the explicit `Runner` path and typed `UserId` / `SessionId` values visible so the runtime boundary stays understandable
 
 ## Running from the Repo Root

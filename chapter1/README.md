@@ -8,11 +8,11 @@ These crates are the active Chapter 1 Rust fundamentals examples for the book.
 - Cargo `1.92+`
 - Rust edition `2024`
 
-The local `adk-rust` workspace that this book tracks is currently `0.8.0`. That workspace itself declares Rust `1.85+`, but the book standardizes on Rust `1.92+` so every chapter in this repo uses one consistent toolchain.
+The local `adk-rust` workspace that this book tracks is currently `0.8.2`. That workspace itself declares Rust `1.85+`, but the book standardizes on Rust `1.92+` so every chapter in this repo uses one consistent toolchain.
 
-## How This Chapter Fits ADK-Rust 0.8.0
+## How This Chapter Fits ADK-Rust 0.8.2
 
-Chapter 1 is intentionally close to the language. ADK-Rust `0.8.0` defaults to the lean `minimal` tier and gives new users a faster entry path through `adk_rust::run()` and `provider_from_env()`, but those conveniences rest on ideas that are easier to learn in isolation first:
+Chapter 1 is intentionally close to the language. ADK-Rust `0.8.2` defaults to the lean `minimal` tier and gives new users a faster entry path through `adk_rust::run()` and `provider_from_env()`, but those conveniences rest on ideas that are easier to learn in isolation first:
 
 - async execution for model calls, runners, and streaming
 - explicit `Result` handling for fallible operations
@@ -58,4 +58,4 @@ You can also `cd` into an individual crate directory and run `cargo run` there.
 
 ## Stability Note
 
-ADK-Rust `0.8.0` also changes the feature-tier story materially: `minimal` is now the default, while richer production surfaces are deliberate opt-ins. Chapter 1 stays on language foundations first so those later choices make sense when they appear.
+ADK-Rust `0.8.2` also changes the feature-tier story materially: `minimal` is now the default, while richer production surfaces are deliberate opt-ins. Chapter 1 stays on language foundations first so those later choices make sense when they appear.

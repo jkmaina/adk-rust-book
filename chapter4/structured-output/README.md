@@ -36,11 +36,11 @@ cargo run
 
 The program prints JSON for a movie review request. The exact values vary by model, but the response should include `title`, `year`, `rating`, `genre`, `summary`, and `recommended`.
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 This example keeps the same explicit runtime shape taught in Chapter 3 and adds one new control surface: `output_schema(...)`.
 
-That matters in `0.8.0` for two reasons:
+That matters in `0.8.2` for two reasons:
 
 - the runtime boundary is still explicit, including `RunnerConfig` and typed `UserId` / `SessionId`
 - structured output is powerful, but it still depends on provider support and only guarantees shape, not truth

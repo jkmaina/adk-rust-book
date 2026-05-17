@@ -2,7 +2,7 @@
 
 These crates are the active Chapter 15 ADK-Rust examples for observability and operations.
 
-In local `0.8.0`, this chapter maps directly onto the current runtime surface. Telemetry is part of the `standard` tier rather than the default `minimal` starter set, and the examples show both manual instrumentation patterns and the wider OpenTelemetry-aligned usage story.
+In local `0.8.2`, this chapter maps directly onto the current runtime surface. Telemetry is part of the `standard` tier rather than the default `minimal` starter set, and the examples show both manual instrumentation patterns and the wider OpenTelemetry-aligned usage story.
 
 ## Included Crates
 

@@ -9,10 +9,10 @@ This crate is the book adaptation of the validated backend example at `../adk-pl
 - combining session memory with tool usage
 - following references from earlier turns when later requests rely on prior context
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - the example uses stable typed `UserId` and `SessionId` values so continuity is explicit at the runner boundary
-- local `adk-rust` `0.8.0` fixed Gemini 3.x `thought_signature` handling for multi-turn function calling, which makes examples like this one materially more dependable
+- local `adk-rust` `0.8.2` fixed Gemini 3.x `thought_signature` handling for multi-turn function calling, which makes examples like this one materially more dependable
 - typed `#[tool]` functions keep the tool boundary readable and schema-driven instead of passing opaque JSON blobs around
 - the example intentionally keeps the explicit `Runner` path visible so readers can see how tool use and session continuity are wired together
 

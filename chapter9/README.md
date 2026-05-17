@@ -2,7 +2,7 @@
 
 These crates are the active Chapter 9 ADK-Rust examples for callbacks, plugins, and guardrails.
 
-They are intentionally small, but they map onto a broader `0.8.0` runtime story. Local ADK-Rust now has a richer callback surface than early drafts of the book assumed, including model and tool interception paths, explicit tool outcomes, and a more deliberate runtime guardrail story. This chapter starts with the simplest validated examples first so readers can learn the boundaries before they learn every hook.
+They are intentionally small, but they map onto a broader `0.8.2` runtime story. Local ADK-Rust now has a richer callback surface than early drafts of the book assumed, including model and tool interception paths, explicit tool outcomes, and a more deliberate runtime guardrail story. This chapter starts with the simplest validated examples first so readers can learn the boundaries before they learn every hook.
 
 ## Included Crates
 
@@ -20,7 +20,7 @@ cargo run -p chapter9-plugin-system
 
 All three crates compile offline, but live execution requires `GOOGLE_API_KEY`.
 
-## How This Chapter Fits ADK-Rust 0.8.0
+## How This Chapter Fits ADK-Rust 0.8.2
 
 - `chapter9-callbacks-logging` shows the smallest useful callback boundary: observe a run without changing the result.
 - `chapter9-callbacks-guardrails` shows that callback return values are policy outcomes, not just control-flow tricks.

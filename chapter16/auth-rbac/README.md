@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/playground/backend/examples/auth_rbac.rs` i
 - runtime tool checks enforced before execution
 - an optional live agent run that encounters those permission boundaries
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, auth is part of the `standard` tier rather than the default `minimal` surface, and the official docs now distinguish RBAC from request-level scopes more clearly. This crate focuses on the RBAC side first: the model may attempt a tool call, but the runtime still decides whether the action is allowed.
+In local `0.8.2`, auth is part of the `standard` tier rather than the default `minimal` surface, and the official docs now distinguish RBAC from request-level scopes more clearly. This crate focuses on the RBAC side first: the model may attempt a tool call, but the runtime still decides whether the action is allowed.
 
 ## Run
 

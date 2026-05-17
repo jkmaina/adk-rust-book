@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/docs_examples/deployment/launcher_test/src/
 - using the same binary for interactive chat or HTTP serving
 - separating offline validation from opt-in live smoke execution
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` makes the launcher example more than a convenience wrapper. `Launcher` now also exposes `build_app()` and `build_app_with_a2a(...)` for teams that want ADK server wiring while still owning the surrounding Axum application. This crate keeps the example simple by teaching the binary packaging path first, then validating the same runtime through `Runner`.
+Local `0.8.2` makes the launcher example more than a convenience wrapper. `Launcher` now also exposes `build_app()` and `build_app_with_a2a(...)` for teams that want ADK server wiring while still owning the surrounding Axum application. This crate keeps the example simple by teaching the binary packaging path first, then validating the same runtime through `Runner`.
 
 ## Run
 

@@ -9,11 +9,11 @@ This crate adapts `../adk-playground/playground/backend/examples/postgres_sessio
 - running a live multi-turn agent exchange against persisted session state
 - retrieving and deleting sessions as part of the full lifecycle
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - the example uses the current `PostgresSessionService` exposed through the local workspace
 - the live runner path uses typed `UserId` and `SessionId` values even though the CRUD request structs remain string-addressed
-- local `0.8.0` session migrations are more mature than the older drafts assumed, including fixes around PostgreSQL version tracking types
+- local `0.8.2` session migrations are more mature than the older drafts assumed, including fixes around PostgreSQL version tracking types
 - the point is not just storage; it is durable continuity for a real agent flow
 
 ## Runtime Requirements

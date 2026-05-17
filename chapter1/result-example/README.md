@@ -49,6 +49,6 @@ File::open("file.txt")?
 // If Ok, keep the value and continue
 ```
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-ADK-Rust `0.8.0` redesigned `AdkError` into a structured error envelope with a component, category, code, message, and retry hint. You do not need the whole taxonomy to understand the framework, but you do need Rust's `Result` habit. ADK expects fallible operations to be explicit, inspectable, and safe to propagate.
+ADK-Rust `0.8.2` redesigned `AdkError` into a structured error envelope with a component, category, code, message, and retry hint. You do not need the whole taxonomy to understand the framework, but you do need Rust's `Result` habit. ADK expects fallible operations to be explicit, inspectable, and safe to propagate.

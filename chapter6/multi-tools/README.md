@@ -8,10 +8,10 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - mixing weather lookup, arithmetic, and unit conversion
 - routing different parts of a single request to the right tool
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - the example shows one agent selecting among several typed custom tools through the shared `Tool` surface
-- `0.8.0` can also mix custom tools with provider-native built-in tools, but this example keeps every capability custom so tool-selection logic is easy to study
+- `0.8.2` can also mix custom tools with provider-native built-in tools, but this example keeps every capability custom so tool-selection logic is easy to study
 - the explicit `Runner` path and typed runtime identity remain visible instead of being hidden behind a convenience helper
 - the tool handlers return data-first results, which is the right default when later systems may need to inspect or reuse the outputs
 

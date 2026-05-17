@@ -2,7 +2,7 @@
 
 These crates are the active Chapter 16 ADK-Rust examples for security and production best practices.
 
-In local `0.8.0`, this chapter maps directly onto the current runtime surface. Guardrails and auth are part of the `standard` tier rather than the default `minimal` starter set, while the examples show how identity, policy, audit, and retrieval boundaries compose into a real production posture.
+In local `0.8.2`, this chapter maps directly onto the current runtime surface. Guardrails and auth are part of the `standard` tier rather than the default `minimal` starter set, while the examples show how identity, policy, audit, and retrieval boundaries compose into a real production posture.
 
 ## Included Crates
 

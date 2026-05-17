@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - short-circuiting an agent run with a synthetic assistant response
 - separating accepted input from blocked input without changing the rest of the runner flow
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, guardrails are part of a more explicit runtime control story. This crate shows the core policy boundary clearly: `Ok(None)` allows the run to continue, `Ok(Some(Content))` returns an intentional early answer, and `Err(...)` fails the run. That makes the example useful beyond the specific blocked-word rule.
+In local `0.8.2`, guardrails are part of a more explicit runtime control story. This crate shows the core policy boundary clearly: `Ok(None)` allows the run to continue, `Ok(Some(Content))` returns an intentional early answer, and `Err(...)` fails the run. That makes the example useful beyond the specific blocked-word rule.
 
 ## Run
 

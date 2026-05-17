@@ -8,13 +8,13 @@ These crates support the Chapter 2 architecture and composition discussion.
 - Cargo `1.92+`
 - Rust edition `2024`
 
-The local `adk-rust` workspace this chapter aligns with is `0.8.0`. That workspace itself declares Rust `1.85+`, but the book stays on Rust `1.92+` so every chapter in this repo shares one consistent baseline.
+The local `adk-rust` workspace this chapter aligns with is `0.8.2`. That workspace itself declares Rust `1.85+`, but the book stays on Rust `1.92+` so every chapter in this repo shares one consistent baseline.
 
-## How This Chapter Fits ADK-Rust 0.8.0
+## How This Chapter Fits ADK-Rust 0.8.2
 
 Chapter 2 is where the book stops treating ADK-Rust as a bag of APIs and starts treating it as a system.
 
-In `0.8.0`, that means three things in particular:
+In `0.8.2`, that means three things in particular:
 
 - the framework now has a published stability contract, so the architecture can be read as a stable core, a beta platform, and an experimental edge
 - convenience entry points such as `adk_rust::run()` and `Launcher` are now part of the onboarding story, but they still sit on top of the same service, agent, runner, and application layers

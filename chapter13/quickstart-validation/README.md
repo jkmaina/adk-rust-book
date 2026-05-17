@@ -8,9 +8,9 @@ This crate adapts the validated README quickstart snippet from `../adk-playgroun
 - validating the `Launcher` quickstart wiring against ADK-Rust 0.8
 - running one deterministic prompt through the runner stack when live smoke is enabled
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` makes this example slightly more instructive than it first appears. The validator now has to track the current runner boundary correctly, including the fuller `RunnerConfig` shape used by manual runner construction, while the live provider path stays optional. That is exactly the kind of runtime drift a smoke-friendly validation crate should catch early.
+Local `0.8.2` makes this example slightly more instructive than it first appears. The validator now has to track the current runner boundary correctly, including the fuller `RunnerConfig` shape used by manual runner construction, while the live provider path stays optional. That is exactly the kind of runtime drift a smoke-friendly validation crate should catch early.
 
 ## Run
 

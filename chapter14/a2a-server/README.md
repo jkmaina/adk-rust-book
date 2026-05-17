@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/docs_examples/deployment/a2a_test/src/serve
 - preparing an agent card and `/a2a` endpoint for deployment
 - separating app construction from actually binding the server port
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, the deployment story is more explicit than older drafts assumed. A2A is part of the stable specialist server surface, and ADK-Rust distinguishes clearly between constructing an app with A2A routes and actually taking ownership of the listener and serve loop. This crate keeps those two stages separate on purpose.
+In local `0.8.2`, the deployment story is more explicit than older drafts assumed. A2A is part of the stable specialist server surface, and ADK-Rust distinguishes clearly between constructing an app with A2A routes and actually taking ownership of the listener and serve loop. This crate keeps those two stages separate on purpose.
 
 ## Run
 

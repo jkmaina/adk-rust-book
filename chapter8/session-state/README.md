@@ -9,7 +9,7 @@ This crate adapts the same validated `session_state` pattern used in Chapter 5, 
 - distinguishing explicit session state from conversation history
 - retrieving the session afterward to inspect continuity and stored events
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - the example keeps the explicit `Runner` path and typed runtime identity visible
 - it demonstrates the modern `HashMap<String, Value>` session-state model rather than an old string-only mental model

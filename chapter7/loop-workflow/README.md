@@ -8,7 +8,7 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - bounded retries using `with_max_iterations`
 - explicit early exit with `ExitLoopTool`
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - this example uses the current `LoopAgent::new(...).with_max_iterations(...)` API shape directly
 - `ExitLoopTool` gives the semantic stop signal, while `with_max_iterations(...)` provides the operational safety limit

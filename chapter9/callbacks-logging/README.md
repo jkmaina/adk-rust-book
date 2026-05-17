@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - logging agent, session, and user context around a live run
 - keeping callback logic side-effect oriented while the agent still produces its normal answer
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-This example teaches the smallest stable callback pattern in the local `0.8.0` repo: observe the run boundary without changing the agent's job. The broader framework now also supports richer callback surfaces, including model and tool interception, but this crate stays focused on the first pattern readers need to understand.
+This example teaches the smallest stable callback pattern in the local `0.8.2` repo: observe the run boundary without changing the agent's job. The broader framework now also supports richer callback surfaces, including model and tool interception, but this crate stays focused on the first pattern readers need to understand.
 
 ## Run
 

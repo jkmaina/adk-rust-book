@@ -8,12 +8,12 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - a single agent using multiple small function tools
 - delegating weather and time questions to tools instead of free-form guessing
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - this is the recommended `#[tool]` path for custom capabilities in the current repo
 - the example keeps the explicit `Runner` boundary and typed `UserId` / `SessionId` values visible
 - each tool returns structured data, leaving the model to narrate the user-facing answer
-- `FunctionTool::new(...)` still exists in `0.8.0`, but this example uses the clearer macro-based path on purpose
+- `FunctionTool::new(...)` still exists in `0.8.2`, but this example uses the clearer macro-based path on purpose
 
 ## Run
 

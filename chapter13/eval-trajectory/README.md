@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/docs_examples/evaluation/eval_test/src/traj
 - using builder helpers like `exact_tools()` and `semantic_match()`
 - scoring actual versus expected tool calls with `ToolTrajectoryScorer`
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` broadens the evaluation surface beyond exact response matching, including semantic and rubric-based criteria in `adk-eval`. This crate keeps the example offline and deterministic while still teaching the more realistic question: whether the agent behaved correctly, not merely whether it phrased the answer one exact way.
+Local `0.8.2` broadens the evaluation surface beyond exact response matching, including semantic and rubric-based criteria in `adk-eval`. This crate keeps the example offline and deterministic while still teaching the more realistic question: whether the agent behaved correctly, not merely whether it phrased the answer one exact way.
 
 ## Run
 

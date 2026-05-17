@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - streaming transcript and audio chunks as they arrive
 - saving the final PCM16 stream as a WAV file for replay
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` expands the realtime surface beyond this basic example with interruption detection, session updates, and context mutation for long-lived calls. This crate stays lower-level on purpose so the reader can see the raw event model first: transcript deltas, audio deltas, completion, and error handling.
+Local `0.8.2` expands the realtime surface beyond this basic example with interruption detection, session updates, and context mutation for long-lived calls. This crate stays lower-level on purpose so the reader can see the raw event model first: transcript deltas, audio deltas, completion, and error handling.
 
 ## Run
 

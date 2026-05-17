@@ -9,11 +9,11 @@ This crate adapts `../adk-playground/playground/backend/examples/mongodb_session
 - running a live shopping-oriented agent turn against persisted state
 - retrieving and deleting sessions after the interaction
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - the example uses the local `MongoSessionService` directly from the current workspace
 - the session state demonstrates why `HashMap<String, Value>` is useful: nested profile data fits naturally
-- local `0.8.0` no longer requires the old `retryWrites=false` workaround for standalone MongoDB deployments
+- local `0.8.2` no longer requires the old `retryWrites=false` workaround for standalone MongoDB deployments
 - the runner still uses typed `UserId` and `SessionId` values at execution time
 
 ## Runtime Requirements

@@ -9,7 +9,7 @@ Chapter 8 is where the book treats continuity as a runtime resource instead of a
 - Rust `1.92+`
 - Cargo `1.92+`
 - edition `2024`
-- local `adk-rust` `0.8.0` workspace
+- local `adk-rust` `0.8.2` workspace
 - `GOOGLE_API_KEY` for live Gemini runs in the in-memory example
 - database-specific environment variables and infrastructure for the persistent backends
 
@@ -20,11 +20,11 @@ Chapter 8 is where the book treats continuity as a runtime resource instead of a
 - `chapter8-mongodb-sessions`
 - `chapter8-neo4j-sessions`
 
-## How This Chapter Fits ADK-Rust 0.8.0
+## How This Chapter Fits ADK-Rust 0.8.2
 
 - the runner now expects typed `UserId` and `SessionId` values, which makes session addressing more explicit at the runtime boundary
 - the local session crate also added stronger typed-identity session helpers and optional encrypted wrappers such as `EncryptedSession<S>` and `EncryptionKey`
-- the MongoDB standalone workaround `retryWrites=false` is no longer required in the local `0.8.0` session backend
+- the MongoDB standalone workaround `retryWrites=false` is no longer required in the local `0.8.2` session backend
 - these examples intentionally teach the request-level session APIs directly so readers can see session lifecycle operations clearly
 
 ## Running from the Repo Root

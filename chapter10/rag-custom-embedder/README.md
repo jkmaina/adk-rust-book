@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - building a local `RagPipeline` with in-memory storage
 - exposing retrieval through a typed tool that the agent can call during reasoning
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-The local `0.8.0` docs now present `RagTool` as the standard high-level wrapper for agentic retrieval, but this crate intentionally teaches one layer lower. It makes the embedder, vector store, pipeline, and retrieval contract visible so the reader understands what the higher-level abstraction is actually doing.
+The local `0.8.2` docs now present `RagTool` as the standard high-level wrapper for agentic retrieval, but this crate intentionally teaches one layer lower. It makes the embedder, vector store, pipeline, and retrieval contract visible so the reader understands what the higher-level abstraction is actually doing.
 
 ## Run
 

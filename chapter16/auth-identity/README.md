@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/playground/backend/examples/auth_identity.r
 - multi-tenant session isolation
 - an optional live agent explanation scoped to a validated identity
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, typed identity remains one of the most important low-level safety boundaries in the framework. This crate keeps that boundary visible by validating identities directly and then using those validated values when it reaches the live runner path.
+In local `0.8.2`, typed identity remains one of the most important low-level safety boundaries in the framework. This crate keeps that boundary visible by validating identities directly and then using those validated values when it reaches the live runner path.
 
 ## Run
 

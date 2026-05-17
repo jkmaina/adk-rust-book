@@ -2,7 +2,7 @@
 
 These crates are the active Chapter 14 ADK-Rust examples for deployment and packaging workflows.
 
-In local `0.8.0`, this chapter maps more cleanly onto the framework surface than earlier drafts did. The root crate defaults to `minimal`, so deployment paths are explicit feature choices rather than part of the starter footprint, and `Launcher` now supports both simple `run()` entrypoints and production-oriented app-building paths.
+In local `0.8.2`, this chapter maps more cleanly onto the framework surface than earlier drafts did. The root crate defaults to `minimal`, so deployment paths are explicit feature choices rather than part of the starter footprint, and `Launcher` now supports both simple `run()` entrypoints and production-oriented app-building paths.
 
 ## Included Crates
 

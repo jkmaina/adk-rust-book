@@ -37,7 +37,7 @@ cargo run
 
 The program prints a short 2-3 sentence explanation of Rust. Output varies by model, but you should see streamed natural-language text printed to the terminal.
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 The local framework now offers shorter entry points such as `adk_rust::run()` and `Launcher`. This example does not use them because it is the first place the book teaches the full runtime shape on purpose.
 

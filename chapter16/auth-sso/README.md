@@ -8,9 +8,9 @@ This crate adapts the identity-provider and claims-mapping parts of `../adk-play
 - mapping external groups to internal ADK roles
 - optional OIDC discovery when smoke mode is enabled
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` sharpens the SSO story with clearer claims mapping, stronger tenant controls, and the auth-bridge path for deployed servers. This crate stays focused on provider setup and role mapping so the organizational identity boundary is easy to inspect.
+Local `0.8.2` sharpens the SSO story with clearer claims mapping, stronger tenant controls, and the auth-bridge path for deployed servers. This crate stays focused on provider setup and role mapping so the organizational identity boundary is easy to inspect.
 
 ## Run
 

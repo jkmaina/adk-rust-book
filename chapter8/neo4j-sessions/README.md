@@ -9,7 +9,7 @@ This crate adapts `../adk-playground/playground/backend/examples/neo4j_sessions.
 - running a live multi-turn conversation through a persisted graph-backed session
 - retrieving the session and its linked events before cleanup
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - the example shows that the session abstraction remains stable even when the persistence model changes dramatically
 - the runner still executes with typed `UserId` and `SessionId` values

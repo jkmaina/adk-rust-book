@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - tool calls that carry `thought_signature`
 - a multi-turn session where Gemini can reuse prior reasoning context
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, reasoning visibility is a provider capability rather than a universal guarantee. This crate uses Gemini because it makes `Part::Thinking` and thought-signature handling easy to inspect, while the broader repo also adds provider-specific reasoning controls elsewhere in the model layer.
+In local `0.8.2`, reasoning visibility is a provider capability rather than a universal guarantee. This crate uses Gemini because it makes `Part::Thinking` and thought-signature handling easy to inspect, while the broader repo also adds provider-specific reasoning controls elsewhere in the model layer.
 
 ## Run
 

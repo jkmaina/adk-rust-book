@@ -2,7 +2,7 @@
 
 These crates are the active Chapter 13 ADK-Rust examples for testing, evaluation, and validation workflows.
 
-In local `0.8.0`, this chapter also maps more cleanly onto the framework surface than earlier drafts did. The root crate now defaults to `minimal`, while `adk-eval` lives in the broader `standard` tier, so the examples deliberately separate the always-available offline checks from the narrower live smoke path.
+In local `0.8.2`, this chapter also maps more cleanly onto the framework surface than earlier drafts did. The root crate now defaults to `minimal`, while `adk-eval` lives in the broader `standard` tier, so the examples deliberately separate the always-available offline checks from the narrower live smoke path.
 
 ## Included Crates
 

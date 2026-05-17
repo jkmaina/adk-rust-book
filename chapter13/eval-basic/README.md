@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/docs_examples/evaluation/eval_test/src/basi
 - validating the expected conversation structure
 - creating and round-tripping a test file programmatically
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, evaluation sits in the broader `standard` tier rather than in the default `minimal` starter set. This crate stays intentionally deterministic: it validates schema shape and builder usage without requiring a model call, which makes it useful in ordinary local and CI workflows.
+In local `0.8.2`, evaluation sits in the broader `standard` tier rather than in the default `minimal` starter set. This crate stays intentionally deterministic: it validates schema shape and builder usage without requiring a model call, which makes it useful in ordinary local and CI workflows.
 
 ## Run
 

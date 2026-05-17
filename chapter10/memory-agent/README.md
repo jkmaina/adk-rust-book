@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - searching memory with a typed tool before answering
 - carrying user preferences and project history across sessions
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` supports richer memory-aware context access than this single crate shows, but the explicit `recall_memory` tool remains the clearest way to teach selective recall. The important concept is that memory is retrieved deliberately across sessions, not automatically confused with current-session history.
+Local `0.8.2` supports richer memory-aware context access than this single crate shows, but the explicit `recall_memory` tool remains the clearest way to teach selective recall. The important concept is that memory is retrieved deliberately across sessions, not automatically confused with current-session history.
 
 ## Run
 

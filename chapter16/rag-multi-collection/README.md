@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/playground/backend/examples/rag_multi_colle
 - an offline-safe hash embedder for deterministic examples
 - an optional live agent run over those collections
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, RAG sits in the specialist surface, but the governance lesson here is broader than one crate: retrieval boundaries are part of security architecture too. This example keeps collection scoping explicit so the reader sees how knowledge access can be partitioned instead of dumped into one undifferentiated store.
+In local `0.8.2`, RAG sits in the specialist surface, but the governance lesson here is broader than one crate: retrieval boundaries are part of security architecture too. This example keeps collection scoping explicit so the reader sees how knowledge access can be partitioned instead of dumped into one undifferentiated store.
 
 ## Run
 

@@ -11,11 +11,11 @@ These crates are the active Chapter 3 ADK-Rust quickstart examples.
 
 The upstream `adk-rust` workspace currently declares Rust `1.85+`, but this book standardizes on Rust `1.92+` so every chapter in this repo shares one current baseline.
 
-## How This Chapter Fits ADK-Rust 0.8.0
+## How This Chapter Fits ADK-Rust 0.8.2
 
 Chapter 3 is the first chapter where setup and runtime meet.
 
-In `0.8.0`, ADK-Rust offers multiple entry paths:
+In `0.8.2`, ADK-Rust offers multiple entry paths:
 
 - `cargo-adk` for scaffolding
 - `adk_rust::run()` for the shortest smoke test
@@ -38,4 +38,4 @@ cargo run -p chapter3-template
 
 Both crates expect `GOOGLE_API_KEY` to be set. They compile offline, but live execution requires a valid Gemini API key.
 
-That requirement is deliberate. The local `0.8.0` framework can auto-detect providers with `provider_from_env()`, but these examples use `GeminiModel` directly so the reader can see the full runtime shape before moving to convenience wrappers.
+That requirement is deliberate. The local `0.8.2` framework can auto-detect providers with `provider_from_env()`, but these examples use `GeminiModel` directly so the reader can see the full runtime shape before moving to convenience wrappers.

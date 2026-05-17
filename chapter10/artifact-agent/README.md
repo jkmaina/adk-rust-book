@@ -8,9 +8,9 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - loading and listing artifacts through typed tools
 - attaching an artifact service to the runner so the agent has durable file-like state
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-In local `0.8.0`, artifacts are a mature subsystem with scoped access, versioning, and event integration. This crate keeps the save/load/list operations explicit because that makes the architectural boundary legible: generated outputs with future value belong in artifact storage, not only in conversation history.
+In local `0.8.2`, artifacts are a mature subsystem with scoped access, versioning, and event integration. This crate keeps the save/load/list operations explicit because that makes the architectural boundary legible: generated outputs with future value belong in artifact storage, not only in conversation history.
 
 ## Run
 

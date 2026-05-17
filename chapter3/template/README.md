@@ -36,9 +36,9 @@ cargo run
 
 The program responds in French and should adapt the explanation for a beginner user named Alice because those values are pre-seeded in session state.
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-This crate shows why the explicit `Runner` path still matters in `0.8.0`. The framework now has shorter entry points, but template injection, session-backed state, and typed runtime identity are easier to understand when the setup stays visible.
+This crate shows why the explicit `Runner` path still matters in `0.8.2`. The framework now has shorter entry points, but template injection, session-backed state, and typed runtime identity are easier to understand when the setup stays visible.
 
 By keeping the runtime explicit, the example makes three things clear:
 

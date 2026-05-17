@@ -8,10 +8,10 @@ This crate is the book adaptation of `../adk-playground/playground/backend/examp
 - agent-as-tool delegation for billing and manager specialists
 - escalation flow where the first specialist cannot fully resolve the request
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
 - this example combines workflow thinking with `AgentTool`-based delegation instead of using a pure workflow container alone
-- local `0.8.0` hardened sub-agent-as-tool execution, which makes escalation flows like this materially more dependable
+- local `0.8.2` hardened sub-agent-as-tool execution, which makes escalation flows like this materially more dependable
 - the billing specialist is allowed to initiate the refund but not fully approve amounts over `$50`, which creates a real handoff contract
 - the coordinator still uses the same explicit `Runner` flow and typed `UserId` / `SessionId` boundary as the rest of the book
 

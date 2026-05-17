@@ -8,9 +8,9 @@ This crate adapts `../adk-playground/docs_examples/deployment/a2a_test/src/clien
 - fetching the remote agent card
 - sending a message over the A2A protocol
 
-## ADK-Rust 0.8.0 Connection
+## ADK-Rust 0.8.2 Connection
 
-Local `0.8.0` treats A2A as part of the normal deployment surface rather than as an exotic extra. This crate stays smoke-friendly by default, but it still teaches the real remote-client shape: discover the agent card first, then send protocol-level messages to a published agent service.
+Local `0.8.2` treats A2A as part of the normal deployment surface rather than as an exotic extra. This crate stays smoke-friendly by default, but it still teaches the real remote-client shape: discover the agent card first, then send protocol-level messages to a published agent service.
 
 ## Run
 
