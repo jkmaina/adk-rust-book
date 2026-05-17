@@ -57,6 +57,21 @@ The root workspace lets you compile the chapter crates together while still keep
 - Telemetry, spans, usage tracking, and observability patterns
 - Typed identity, RBAC, SSO, audit trails, and retrieval governance
 
+## Real-World Systems You Can Build
+
+- A customer support agent that looks up order status, escalates refunds, and enforces role boundaries
+- An internal knowledge assistant with scoped RAG collections for engineering docs, HR policies, and operations playbooks
+- A multilingual assistant that adapts language, tone, and explanation depth from session-backed user state
+- A structured data extractor for contacts, tickets, or intake forms that returns schema-shaped output for downstream systems
+- A research-to-writing workflow that separates research, drafting, and editorial refinement into explicit stages
+- A parallel review system that gathers technical, product, and user-experience perspectives before producing one response
+- An iterative content refiner that improves drafts until a quality condition is met or a safe iteration limit is reached
+- A guarded agent surface that redacts PII, blocks unsafe requests, and records audit events for allowed and denied actions
+- A role-aware operations assistant that can search, summarize, and execute tool actions only when runtime permissions allow them
+- A deployment-ready agent service exposed through CLI, server, or A2A interfaces using the same underlying runtime model
+- A telemetry-aware production agent that emits logs, spans, and usage data for latency, cost, and failure analysis
+- A realtime voice or streaming assistant that handles incremental responses instead of waiting for one final blocking reply
+
 ## Quick Start
 
 ```bash
