@@ -59,33 +59,18 @@ The root workspace lets you compile the chapter crates together while still keep
 
 ## Real-World AI Agent Systems You Can Build
 
-- A customer support agent that looks up order status, escalates refunds, and enforces role boundaries
-- An internal knowledge assistant with scoped RAG collections for engineering docs, HR policies, and operations playbooks
-- A multilingual assistant that adapts language, tone, and explanation depth from session-backed user state
-- A structured data extractor for contacts, tickets, or intake forms that returns schema-shaped output for downstream systems
-- A research-to-writing workflow that separates research, drafting, and editorial refinement into explicit stages
-- A parallel review system that gathers technical, product, and user-experience perspectives before producing one response
-- An iterative content refiner that improves drafts until a quality condition is met or a safe iteration limit is reached
-- A guarded agent surface that redacts PII, blocks unsafe requests, and records audit events for allowed and denied actions
-- A role-aware operations assistant that can search, summarize, and execute tool actions only when runtime permissions allow them
-- A deployment-ready agent service exposed through CLI, server, or A2A interfaces using the same underlying runtime model
-- A telemetry-aware production agent that emits logs, spans, and usage data for latency, cost, and failure analysis
-- A realtime voice or streaming assistant that handles incremental responses instead of waiting for one final blocking reply
-
-## Real-World Project Scaffolds
-
-- [customer-support-agent](customer-support-agent)
-- [internal-knowledge-assistant](internal-knowledge-assistant)
-- [multilingual-user-assistant](multilingual-user-assistant)
-- [structured-intake-extractor](structured-intake-extractor)
-- [research-writing-workflow](research-writing-workflow)
-- [parallel-review-system](parallel-review-system)
-- [iterative-content-refiner](iterative-content-refiner)
-- [guarded-agent-surface](guarded-agent-surface)
-- [role-aware-operations-assistant](role-aware-operations-assistant)
-- [deployment-ready-agent-service](deployment-ready-agent-service)
-- [telemetry-aware-production-agent](telemetry-aware-production-agent)
-- [realtime-voice-assistant](realtime-voice-assistant)
+- [customer-support-agent](customer-support-agent): a customer support agent that looks up order status, escalates refunds, and enforces role boundaries
+- [internal-knowledge-assistant](internal-knowledge-assistant): an internal knowledge assistant with scoped RAG collections for engineering docs, HR policies, and operations playbooks
+- [multilingual-user-assistant](multilingual-user-assistant): a multilingual assistant that adapts language, tone, and explanation depth from session-backed user state
+- [structured-intake-extractor](structured-intake-extractor): a structured data extractor for contacts, tickets, or intake forms that returns schema-shaped output for downstream systems
+- [research-writing-workflow](research-writing-workflow): a research-to-writing workflow that separates research, drafting, and editorial refinement into explicit stages
+- [parallel-review-system](parallel-review-system): a parallel review system that gathers technical, product, and user-experience perspectives before producing one response
+- [iterative-content-refiner](iterative-content-refiner): an iterative content refiner that improves drafts until a quality condition is met or a safe iteration limit is reached
+- [guarded-agent-surface](guarded-agent-surface): a guarded agent surface that redacts PII, blocks unsafe requests, and records audit events for allowed and denied actions
+- [role-aware-operations-assistant](role-aware-operations-assistant): a role-aware operations assistant that can search, summarize, and execute tool actions only when runtime permissions allow them
+- [deployment-ready-agent-service](deployment-ready-agent-service): a deployment-ready agent service exposed through CLI, server, or A2A interfaces using the same underlying runtime model
+- [telemetry-aware-production-agent](telemetry-aware-production-agent): a telemetry-aware production agent that emits logs, spans, and usage data for latency, cost, and failure analysis
+- [realtime-voice-assistant](realtime-voice-assistant): a realtime voice or streaming assistant that handles incremental responses instead of waiting for one final blocking reply
 
 ## Quick Start
 
