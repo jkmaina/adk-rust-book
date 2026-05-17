@@ -14,7 +14,7 @@ Beginner-friendly customer support agent that combines the main ADK-Rust lessons
 
 ![Customer Support Agent Architecture](./assets/customer-support-agent-architecture.svg)
 
-### Runtime Shape
+### System Overview: How it Works
 
 - The **runner** is the execution boundary. It owns the app name, root agent, session service, and the streamed response lifecycle.
 - The **coordinator agent** owns conversation flow. It decides which specialist should handle the next step and returns one final customer-facing answer.
