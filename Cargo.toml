@@ -29,6 +29,7 @@ members = [
     "deployment-ready-agent-service",
     "telemetry-aware-production-agent",
     "realtime-voice-assistant",
+    "realtime-voice-assistant-gemini",
 ]
 
 [workspace.package]

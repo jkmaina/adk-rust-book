@@ -1,0 +1,12 @@
+[package]
+name = "realtime-voice-assistant-gemini"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[dependencies]
+adk-realtime = { workspace = true, features = ["gemini", "openai"] }
+anyhow.workspace = true
+dotenvy.workspace = true
+rustls.workspace = true
+tokio.workspace = true

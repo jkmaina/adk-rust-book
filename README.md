@@ -69,6 +69,7 @@ The root workspace lets you compile the chapter crates together while still keep
 - [deployment-ready-agent-service](deployment-ready-agent-service): a deployment-ready agent service exposed through CLI, server, or A2A interfaces using the same underlying runtime model
 - [telemetry-aware-production-agent](telemetry-aware-production-agent): a telemetry-aware production agent that emits logs, spans, and usage data for latency, cost, and failure analysis
 - [realtime-voice-assistant](realtime-voice-assistant): a realtime voice or streaming assistant that handles incremental responses instead of waiting for one final blocking reply
+- [realtime-voice-assistant-gemini](realtime-voice-assistant-gemini): a Gemini Live variant that shows the same event-driven realtime model with Google-native voice and transcript streaming
 
 ## Quick Start
 

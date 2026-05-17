@@ -277,6 +277,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e245ea055990229d5a3923b340ec0c832b2e4e7cf63fa774f1e9802ace507b04"
 dependencies = [
  "adk-core",
+ "adk-gemini",
  "async-openai",
  "async-stream",
  "async-trait",
@@ -2016,6 +2017,7 @@ dependencies = [
  "anyhow",
  "axum",
  "dotenvy",
+ "serde_json",
  "tokio",
 ]
 
@@ -4298,6 +4300,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "realtime-voice-assistant-gemini"
+version = "0.1.0"
+dependencies = [
+ "adk-realtime",
+ "anyhow",
+ "dotenvy",
+ "rustls",
+ "tokio",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5457,6 +5470,7 @@ dependencies = [
  "adk-telemetry",
  "anyhow",
  "dotenvy",
+ "serde_json",
  "tokio",
  "tracing",
 ]

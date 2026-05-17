@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Realtime Voice Assistant Gemini Architecture</title>
+  <desc id="desc">A Gemini Live realtime assistant that handles transcript and audio events separately and writes a WAV file after completion.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f7f2; }
+      .panel { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 14; ry: 14; }
+      .soft { fill: #eef3ff; stroke: #335c99; stroke-width: 2; rx: 12; ry: 12; }
+      .accent { fill: #edf8f0; stroke: #2f6b47; stroke-width: 2; rx: 12; ry: 12; }
+      .warn { fill: #fff4e8; stroke: #9a5b15; stroke-width: 2; rx: 12; ry: 12; }
+      .title { font: 700 24px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .h2 { font: 700 17px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .body { font: 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+      .small { font: 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .arrow { stroke: #374151; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="980" height="560"/>
+  <text class="title" x="38" y="48">Realtime Voice Assistant (Gemini Live)</text>
+  <text class="small" x="38" y="74">The Gemini variant uses the same event-driven application pattern as the OpenAI example.</text>
+
+  <rect class="panel" x="40" y="140" width="230" height="140"/>
+  <text class="h2" x="60" y="170">Prompt Sender</text>
+  <text class="body" x="60" y="202">- opens Gemini Live session</text>
+  <text class="body" x="60" y="228">- sends incident update prompt</text>
+  <text class="body" x="60" y="254">- requests spoken response</text>
+
+  <rect class="soft" x="370" y="100" width="240" height="120"/>
+  <text class="h2" x="390" y="130">Gemini Live Session</text>
+  <text class="body" x="390" y="162">persistent realtime connection</text>
+  <text class="body" x="390" y="188">streaming transcript + audio events</text>
+
+  <rect class="accent" x="370" y="260" width="240" height="120"/>
+  <text class="h2" x="390" y="290">Transcript Path</text>
+  <text class="body" x="390" y="322">deltas rendered immediately</text>
+  <text class="body" x="390" y="348">for fast operator feedback</text>
+
+  <rect class="warn" x="370" y="420" width="240" height="100"/>
+  <text class="h2" x="390" y="450">Audio Path</text>
+  <text class="body" x="390" y="482">PCM chunks buffered and written</text>
+  <text class="body" x="390" y="506">to `incident-update-gemini.wav`</text>
+
+  <rect class="panel" x="700" y="150" width="220" height="110"/>
+  <text class="h2" x="720" y="180">Immediate Output</text>
+  <text class="body" x="720" y="212">partial transcript for live</text>
+  <text class="body" x="720" y="238">status-channel playback text</text>
+
+  <rect class="panel" x="700" y="390" width="220" height="110"/>
+  <text class="h2" x="720" y="420">Final Audio File</text>
+  <text class="body" x="720" y="452">WAV file for playback or</text>
+  <text class="body" x="720" y="478">downstream transport</text>
+
+  <path class="arrow" d="M270 210 H355"/>
+  <path class="arrow" d="M610 170 H685"/>
+  <path class="arrow" d="M610 320 H685"/>
+  <path class="arrow" d="M610 470 H685"/>
+
+  <text class="small" x="285" y="200">prompt enters live session</text>
+  <text class="small" x="620" y="162">events stream back</text>
+  <text class="small" x="620" y="312">partial text first</text>
+  <text class="small" x="620" y="462">assembled audio output</text>
+</svg>
