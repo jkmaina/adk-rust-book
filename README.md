@@ -17,6 +17,63 @@ The root workspace lets you compile the chapter crates together while still keep
 - `scripts/check-drift.py`: edition and dependency drift checks
 - `scripts/smoke-examples.sh`: opt-in live smoke runs for networked examples
 
+## Quick Start
+
+Use the workspace root for all commands in this section.
+
+### 1. Verify the workspace builds
+
+This checks every example crate without running live model calls:
+
+```bash
+cargo check --workspace
+```
+
+### 2. Run the first ADK-Rust example
+
+The most direct starting point is the Chapter 3 quickstart. It shows model setup, session creation, runner wiring, and streamed output in one small crate:
+
+```bash
+cargo run -p chapter3-quickstart
+```
+
+If you want a Rust-only warm-up first, start in [chapter1](chapter1). If you want the architecture bridge before the runtime example, read [chapter2](chapter2) and then come back to Chapter 3.
+
+### 3. Set provider credentials for live examples
+
+Examples that call real models need provider credentials in your environment. The most common cases are:
+
+```bash
+export GOOGLE_API_KEY=your-google-api-key
+export OPENAI_API_KEY=your-openai-api-key
+```
+
+Not every crate needs both. Each example README states the exact provider and environment variables it expects.
+
+## Validation
+
+### Offline validation
+
+Run the full offline check suite for the companion workspace:
+
+```bash
+./scripts/check-examples.sh
+```
+
+### Opt-in live smoke validation
+
+Run live smoke checks only when you intentionally want networked examples to execute:
+
+```bash
+BOOK_RUN_LIVE_SMOKE=1 ./scripts/smoke-examples.sh
+```
+
+If a smoke target needs provider credentials, export them first. For example:
+
+```bash
+BOOK_RUN_LIVE_SMOKE=1 GOOGLE_API_KEY=your-google-api-key ./scripts/smoke-examples.sh
+```
+
 ## Repository Layout
 
 - [chapter1](chapter1): Rust foundations examples
@@ -226,26 +283,3 @@ The public playground currently registers **78** deep-linkable examples. Each li
 - [Data Enrichment](https://playground.adk-rust.com/#action_set_transform): SET + TRANSFORM action nodes prep data, then an LLM agent writes personalized outreach ([source](https://github.com/zavora-ai/adk-playground/blob/main/playground/backend/examples/action_set_transform.rs))
 - [Smart Ticket Router](https://playground.adk-rust.com/#action_switch_loop): LLM classifier + deterministic SWITCH routing + specialist agents handle support tickets ([source](https://github.com/zavora-ai/adk-playground/blob/main/playground/backend/examples/action_switch_loop.rs))
 - [Content Pipeline](https://playground.adk-rust.com/#action_workflow): SET → Research Agent → TRANSFORM → Writer Agent → SWITCH → Editor Agent — full content pipeline ([source](https://github.com/zavora-ai/adk-playground/blob/main/playground/backend/examples/action_workflow.rs))
-
-## Quick Start
-
-```bash
-cargo check --workspace
-cargo run -p chapter3-quickstart
-```
-
-Examples that call live providers require credentials such as `GOOGLE_API_KEY` or `OPENAI_API_KEY`. The per-example READMEs call out those requirements.
-
-## Validation
-
-Offline validation:
-
-```bash
-./scripts/check-examples.sh
-```
-
-Opt-in live smoke validation:
-
-```bash
-BOOK_RUN_LIVE_SMOKE=1 ./scripts/smoke-examples.sh
-```
