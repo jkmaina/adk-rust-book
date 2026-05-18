@@ -17,7 +17,7 @@
 cargo run
 ```
 
-Make sure `hello.txt` exists in the same directory, or you'll see a safe error message.
+The example creates a sample `hello.txt` in your system temp directory on the first run, then reuses it on later runs.
 
 ## Why This Matters
 
