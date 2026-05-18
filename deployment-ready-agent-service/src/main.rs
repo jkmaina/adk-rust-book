@@ -52,22 +52,12 @@ fn build_runner(
     sessions: Arc<dyn SessionService>,
     artifacts: Arc<InMemoryArtifactService>,
 ) -> anyhow::Result<Runner> {
-    Ok(Runner::new(RunnerConfig {
-        app_name: APP_NAME.into(),
-        agent,
-        session_service: sessions,
-        artifact_service: Some(artifacts),
-        memory_service: None,
-        plugin_manager: None,
-        run_config: None,
-        compaction_config: None,
-        context_cache_config: None,
-        cache_capable: None,
-        request_context: None,
-        cancellation_token: None,
-        intra_compaction_config: None,
-        intra_compaction_summarizer: None,
-    })?)
+    Ok(Runner::builder()
+        .app_name(APP_NAME)
+        .agent(agent)
+        .session_service(sessions)
+        .artifact_service(artifacts)
+        .build()?)
 }
 
 fn build_launcher(
@@ -198,7 +188,9 @@ async fn main() -> anyhow::Result<()> {
         println!("Composed router surfaces:");
         println!("  BOOK_RUN_LIVE_SMOKE=1 cargo run -p deployment-ready-agent-service -- app");
         println!("  BOOK_RUN_LIVE_SMOKE=1 cargo run -p deployment-ready-agent-service -- a2a");
-        println!("  BOOK_RUN_LIVE_SMOKE=1 BOOK_RUN_AGENT_SERVICE=1 cargo run -p deployment-ready-agent-service -- a2a");
+        println!(
+            "  BOOK_RUN_LIVE_SMOKE=1 BOOK_RUN_AGENT_SERVICE=1 cargo run -p deployment-ready-agent-service -- a2a"
+        );
         return Ok(());
     }
 

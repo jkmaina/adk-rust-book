@@ -14,8 +14,8 @@ const MODEL_NAME: &str = "gemini-3.1-flash-lite-preview";
 async fn main() -> anyhow::Result<()> {
     dotenvy::dotenv().ok();
 
-    let db_url =
-        std::env::var("MONGODB_URL").unwrap_or_else(|_| "mongodb://adk:adk_playground@localhost:27017".into());
+    let db_url = std::env::var("MONGODB_URL")
+        .unwrap_or_else(|_| "mongodb://adk:adk_playground@localhost:27017".into());
 
     println!("# MongoDB Session Backend\n");
     println!("Connecting to `{db_url}`...\n");
@@ -89,22 +89,11 @@ async fn main() -> anyhow::Result<()> {
     );
 
     let sessions_arc: Arc<dyn SessionService> = Arc::new(service);
-    let runner = Runner::new(RunnerConfig {
-        app_name: APP_NAME.into(),
-        agent,
-        session_service: sessions_arc.clone(),
-        artifact_service: None,
-        memory_service: None,
-        plugin_manager: None,
-        run_config: None,
-        compaction_config: None,
-        context_cache_config: None,
-        cache_capable: None,
-        request_context: None,
-        cancellation_token: None,
-        intra_compaction_config: None,
-        intra_compaction_summarizer: None,
-    })?;
+    let runner = Runner::builder()
+        .app_name(APP_NAME)
+        .agent(agent)
+        .session_service(sessions_arc.clone())
+        .build()?;
 
     let msg = Content::new("user").with_text(
         "I'm looking for a birthday gift for someone who loves cooking. Budget around $50-80.",

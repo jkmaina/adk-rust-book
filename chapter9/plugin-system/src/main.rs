@@ -16,22 +16,12 @@ fn build_runner(
     sessions: Arc<dyn SessionService>,
     plugin_manager: Arc<PluginManager>,
 ) -> anyhow::Result<Runner> {
-    Ok(Runner::new(RunnerConfig {
-        app_name: APP_NAME.into(),
-        agent,
-        session_service: sessions,
-        artifact_service: None,
-        memory_service: None,
-        plugin_manager: Some(plugin_manager),
-        run_config: None,
-        compaction_config: None,
-        context_cache_config: None,
-        cache_capable: None,
-        request_context: None,
-        cancellation_token: None,
-        intra_compaction_config: None,
-        intra_compaction_summarizer: None,
-    })?)
+    Ok(Runner::builder()
+        .app_name(APP_NAME)
+        .agent(agent)
+        .session_service(sessions)
+        .plugin_manager(plugin_manager)
+        .build()?)
 }
 
 async fn create_session(
